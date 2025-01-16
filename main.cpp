@@ -12,6 +12,7 @@
 #include "sphere.h"
 #include "stb_image.h"
 #include "cube.h"
+#include "SpotLight.h"
 
 #include <iostream>
 
@@ -97,9 +98,10 @@ BasicCamera basic_camera(eyeX, eyeY, eyeZ, lookAtX, lookAtY, lookAtZ, V);
 glm::vec3 pointLightPositions[] = {
     glm::vec3(4.50f,  2.50f,  1.5f),
     glm::vec3(4.50f,  2.50f,  -1.5f),
-    glm::vec3(-4.50f, 2.50f,  1.5f),
-    glm::vec3(-4.50f, 2.50f,  -1.5f)
+    glm::vec3(-10.50f, 2.50f,  20.5f),
+    glm::vec3(-10.50f, 2.50f,  -20.5f)
 };
+
 PointLight pointlight1(
 
     pointLightPositions[0].x, pointLightPositions[0].y, pointLightPositions[0].z,  // position
@@ -218,8 +220,6 @@ int main()
     // -----------------------------
     glEnable(GL_DEPTH_TEST);
 
-    Torus torus(2.0f, 0.6f, 50, 30); // Torus with radius = 1.0, tube radius = 0.4
-    /*Shader lightingShader("vertex_shader.glsl", "fragment_shader.glsl");*/
     // build and compile our shader zprogram
     // ------------------------------------
     Shader lightingShader("vertexShaderForPhongShading.vs", "fragmentShaderForPhongShading.fs");
@@ -233,16 +233,16 @@ int main()
     string bitfestPath = "bitfest.jpg";
     string floor_tiles_path = "Images/floor_tiles.jpg";
 
-    //unsigned int diffMap = loadTexture(diffuseMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
-    //unsigned int specMap = loadTexture(specularMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+    unsigned int diffMap = loadTexture(diffuseMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+    unsigned int specMap = loadTexture(specularMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     unsigned int laughEmoji = loadTexture(laughEmoPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     unsigned int bitfest = loadTexture(bitfestPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     unsigned int floor_tiles = loadTexture(floor_tiles_path.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     //unsigned int laughEmojiv2 = loadTexture(laughEmoPath.c_str(), GL_REPEAT, GL_MIRRORED_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
 
     Cube cube = Cube(bitfest, bitfest, 32.0f, 0.0f, 0.0f, 1.0f, 1.0f);
-    Cube floor_tiles_cube = Cube(floor_tiles, floor_tiles, 32.0f, 0.0f, 0.0f, 10.0f, 10.0f);
-    Cube2 floor_tiles_steps = Cube2(floor_tiles, floor_tiles, 32.0f, 0.0f, 0.0f, 10.0f, 10.0f);
+    Cube floor_tiles_cube = Cube(floor_tiles, floor_tiles, 50.0f, 0.0f, 0.0f, 10.0f, 10.0f);
+    Cube2 floor_tiles_steps = Cube2(floor_tiles, floor_tiles, 50.0f, 0.0f, 0.0f, 10.0f, 10.0f);
     SphereTex spheretex = SphereTex();
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
@@ -460,22 +460,25 @@ int main()
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        glm::mat4 projection = myProjection(left, right, bottom, top, near, far);
+
+        glm::mat4 view = camera.GetViewMatrix();
+
         // be sure to activate shader when setting uniforms/drawing objects
         lightingShader.use();
         lightingShader.setVec3("viewPos", camera.Position);
-
-        lightingShaderWithTexture.use();
-        lightingShaderWithTexture.setVec3("viewPos", camera.Position);
+        lightingShader.setMat4("projection", projection);
+        lightingShader.setMat4("view", view);
 
         // pass projection matrix to shader (note that in this case it could change every frame)
-        glm::mat4 projection_texture = myProjection(left, right, bottom, top, near, far);
+        
         //glm::mat4 projection = glm::ortho(-2.0f, +2.0f, -1.5f, +1.5f, 0.1f, 100.0f);
-        lightingShaderWithTexture.setMat4("projection", projection_texture);
+       
 
         // camera/view transformation
-        glm::mat4 view = camera.GetViewMatrix();
+        
         //glm::mat4 view = basic_camera.createViewMatrix();
-        lightingShaderWithTexture.setMat4("view", view);
+        
 
 
         // point light 1
@@ -487,8 +490,15 @@ int main()
         //// point light 4
         pointlight4.setUpPointLight(lightingShader);
 
-        // activate shader
-        lightingShader.use();
+
+        lightingShader.setVec3("directionalLight.directiaon", 0.5f, -3.0f, -3.0f);
+        lightingShader.setVec3("directionalLight.ambient", .5f, .5f, .5f);
+        lightingShader.setVec3("directionalLight.diffuse", .8f, .8f, .8f);
+        lightingShader.setVec3("directionalLight.specular", 1.0f, 1.0f, 1.0f);
+
+
+        lightingShader.setBool("directionLightOn", directionalLightOn);
+
 
         lightingShader.setVec3("directionalLight.direction", 0.5f, -3.0f, -3.0f);
         if (AmbientON) {
@@ -532,7 +542,7 @@ int main()
         //    100.0f                             // far: far clipping plane
         //);
 
-        glm::mat4 projection = myProjection(left, right, bottom, top, near, far);
+        
 
         lightingShader.setMat4("projection", projection);
 
@@ -554,6 +564,9 @@ int main()
 
 
         lightingShaderWithTexture.use();
+        lightingShaderWithTexture.setVec3("viewPos", camera.Position);
+        lightingShaderWithTexture.setMat4("projection", projection);
+        lightingShaderWithTexture.setMat4("view", view);
         //// point light 1
         pointlight1.setUpPointLight(lightingShaderWithTexture);
         //// point light 2
@@ -563,6 +576,47 @@ int main()
         ////// point light 4
         pointlight4.setUpPointLight(lightingShaderWithTexture);
 
+        lightingShaderWithTexture.setVec3("directionalLight.directiaon", 0.5f, -3.0f, -3.0f);
+        lightingShaderWithTexture.setVec3("directionalLight.ambient", .5f, .5f, .5f);
+        lightingShaderWithTexture.setVec3("directionalLight.diffuse", .8f, .8f, .8f);
+        lightingShaderWithTexture.setVec3("directionalLight.specular", 1.0f, 1.0f, 1.0f);
+
+
+        lightingShaderWithTexture.setBool("directionLightOn", directionalLightOn);
+
+
+        lightingShaderWithTexture.setVec3("directionalLight.direction", 0.5f, -3.0f, -3.0f);
+        if (AmbientON) {
+            lightingShaderWithTexture.setVec3("directionalLight.ambient", 0.2f, 0.2f, 0.2f);
+            lightingShaderWithTexture.setVec3("spotLight.ambient", 0.2f, 0.2f, 0.2f);
+        }
+        if (DiffusionON) {
+            lightingShaderWithTexture.setVec3("directionalLight.diffuse", 0.8f, 0.8f, 0.8f);
+            lightingShaderWithTexture.setVec3("spotLight.diffuse", 0.8f, 0.8f, 0.8f);
+        }
+        if (SpecularON) {
+
+            lightingShaderWithTexture.setVec3("directionalLight.specular", 1.0f, 1.0f, 1.0f);
+            lightingShaderWithTexture.setVec3("spotLight.specular", 1.0f, 1.0f, 1.0f);
+        }
+
+
+
+        lightingShaderWithTexture.setBool("directionalLightON", directionalLightOn);
+
+        lightingShaderWithTexture.setBool("SpotLightON", SpotLightOn);
+
+        lightingShaderWithTexture.setVec3("spotLight.direction", 0.0f, -1.0f, 0.0f);
+        lightingShaderWithTexture.setVec3("spotLight.position", 3.5f, 3.0f, 0.0f);
+
+
+
+        lightingShaderWithTexture.setFloat("spotLight.k_c", 1.0f);
+        lightingShaderWithTexture.setFloat("spotLight.k_l", 0.09f);
+        lightingShaderWithTexture.setFloat("spotLight.k_q", 0.032f);
+        lightingShaderWithTexture.setFloat("spotLight.cutOff", glm::cos(glm::radians(35.5f)));
+        lightingShaderWithTexture.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(40.5f)));
+        
 
         glm::mat4 modelMatrixForContainer = glm::mat4(1.0f);
         modelMatrixForContainer = glm::translate(modelMatrixForContainer, glm::vec3(2.0f, 1.4f, 3.8f));
@@ -618,7 +672,7 @@ int main()
 
         // we now draw as many light bulbs as we have point lights.
         glBindVertexArray(lightCubeVAO);
-        for (unsigned int i = 0; i < 2; i++)
+        for (unsigned int i = 0; i < 4; i++)
         {
             model = glm::mat4(1.0f);
             model = glm::translate(model, pointLightPositions[i]);
@@ -870,29 +924,6 @@ void drawRowOfChairs(unsigned int& cubeVAO, Shader& lightingShader) {
 
 
 
-void rightWall(unsigned int& cubeVAO, Shader& lightingShader)
-{
-    lightingShader.use();
-    //base
-   /* glm::mat4 identityMatrix = glm::mat4(1.0f);
-    glm::mat4 translate = glm::mat4(1.0f);
-    glm::mat4 scale = glm::mat4(1.0f);
-    glm::mat4 rotation = glm::mat4(1.0f);
-    glm::mat4 model = translate * scale;*/
-    //wall
-    /*scale = glm::scale(identityMatrix, glm::vec3(10.0, 5.0, 0.1));
-    translate = glm::translate(identityMatrix, glm::vec3(-5.0, -0.8, 4.9));
-    model = translate * scale;
-    drawCube(cubeVAO, lightingShader, model, 0.5, 0.5, 0.5, 32.0);
-
-    scale = glm::scale(identityMatrix, glm::vec3(1.7, 1.5, 0.7));
-    translate = glm::translate(identityMatrix, glm::vec3(-3.85, -0.1, 4.0));
-    model = translate * scale;
-    drawCube(cubeVAO, lightingShader, model, 0.122, 0.361, 0.357, 32.0);*/
-
-
-}
-
 void axis(unsigned int& cubeVAO, Shader& lightingShader)
 {
     lightingShader.use();
@@ -918,83 +949,7 @@ void axis(unsigned int& cubeVAO, Shader& lightingShader)
     drawCube(cubeVAO, lightingShader, model, 0.0, 0.0, 1.0, 32.0);
 }
 
-void bed(unsigned int& cubeVAO, Shader& lightingShader, glm::mat4 alTogether)
-{
-    float baseHeight = 0.3;
-    float width = 1;
-    float length = 2;
-    float pillowWidth = 0.3;
-    float pillowLength = 0.15;
-    float blanketWidth = 0.8;
-    float blanketLength = 0.7;
-    float headHeight = 0.6;
 
-    //base
-    glm::mat4 model = glm::mat4(1.0f);
-    glm::mat4 translate = glm::mat4(1.0f);
-    glm::mat4 translate2 = glm::mat4(1.0f);
-    glm::mat4 scale = glm::mat4(1.0f);
-    scale = glm::scale(model, glm::vec3(width, baseHeight, length));
-    translate = glm::translate(model, glm::vec3(-0.5, 0, -0.5));
-    model = alTogether * scale * translate;
-    drawCube(cubeVAO, lightingShader, model, 0.545, 0.271, 0.075, 32.0);
-
-    //foam
-    model = glm::mat4(1.0f);
-    translate = glm::mat4(1.0f);
-    translate2 = glm::mat4(1.0f);
-    scale = glm::mat4(1.0f);
-    translate2 = glm::translate(model, glm::vec3(0, baseHeight, 0));
-    scale = glm::scale(model, glm::vec3(width, 0.06, length));
-    translate = glm::translate(model, glm::vec3(-0.5, 0, -0.5));
-    model = alTogether * translate2 * scale * translate;
-    drawCube(cubeVAO, lightingShader, model, 0.804, 0.361, 0.361, 32.0);
-
-    //pillow 1
-    model = glm::mat4(1.0f);
-    translate = glm::mat4(1.0f);
-    translate2 = glm::mat4(1.0f);
-    scale = glm::mat4(1.0f);
-    translate2 = glm::translate(model, glm::vec3((width / 2) - (0.1 + pillowWidth / 2), baseHeight + 1 * 0.06, (length / 2) - (0.025 + pillowWidth / 2)));
-    scale = glm::scale(model, glm::vec3(pillowWidth, 0.04, pillowLength));
-    translate = glm::translate(model, glm::vec3(-0.5, 0, -0.5));
-    model = alTogether * translate2 * scale * translate;
-    drawCube(cubeVAO, lightingShader, model, 1, 0.647, 0, 32.0);
-
-    //pillow 2
-    model = glm::mat4(1.0f);
-    translate = glm::mat4(1.0f);
-    translate2 = glm::mat4(1.0f);
-    scale = glm::mat4(1.0f);
-    translate2 = glm::translate(model, glm::vec3((-width / 2) + (0.1 + pillowWidth / 2), baseHeight + 1 * 0.06, (length / 2) - (0.025 + pillowWidth / 2)));
-    scale = glm::scale(model, glm::vec3(pillowWidth, 0.04, pillowLength));
-    translate = glm::translate(model, glm::vec3(-0.5, 0, -0.5));
-    model = alTogether * translate2 * scale * translate;
-    drawCube(cubeVAO, lightingShader, model, 1, 0.647, 0, 32.0);
-
-    //blanket
-    model = glm::mat4(1.0f);
-    translate = glm::mat4(1.0f);
-    translate2 = glm::mat4(1.0f);
-    scale = glm::mat4(1.0f);
-    translate2 = glm::translate(model, glm::vec3(0, baseHeight + 1 * 0.06, -(length / 2 - 0.025) + blanketLength / 2));
-    scale = glm::scale(model, glm::vec3(blanketWidth, 0.015, blanketLength));
-    translate = glm::translate(model, glm::vec3(-0.5, 0, -0.5));
-    model = alTogether * translate2 * scale * translate;
-    drawCube(cubeVAO, lightingShader, model, 0.541, 0.169, 0.886, 32.0);
-
-    //head
-    model = glm::mat4(1.0f);
-    translate = glm::mat4(1.0f);
-    translate2 = glm::mat4(1.0f);
-    scale = glm::mat4(1.0f);
-    translate2 = glm::translate(model, glm::vec3(0, 0, (length / 2 - 0.02 / 2) + 0.02));
-    scale = glm::scale(model, glm::vec3(width, headHeight, 0.02));
-    translate = glm::translate(model, glm::vec3(-0.5, 0, -0.5));
-    model = alTogether * translate2 * scale * translate;
-    drawCube(cubeVAO, lightingShader, model, 0.545, 0.271, 0.075, 32.0);
-
-}
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------

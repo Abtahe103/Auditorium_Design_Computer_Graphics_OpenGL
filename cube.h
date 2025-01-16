@@ -428,10 +428,10 @@ private:
             -0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, TXmax, TYmin,
 
             // bottom
-            -0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0, 0,
-            0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0, 0,
-            0.25f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0, 0,
-            -0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0, 0
+            -0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, TXmin, TYmin,
+            0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, TXmin, TYmax,
+            0.25f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, TXmax, TYmax,
+            -0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, TXmax, TYmin
         };
 
         unsigned int cube_indices[] = {

@@ -44,15 +44,37 @@
     <ClInclude Include="cube.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="SpotLight.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="directionalLight.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="fragmentShaderForGouraudShading.fs" />
-    <None Include="fragmentShaderForPhongShading.fs" />
-    <None Include="vertexShader.vs" />
-    <None Include="fragmentShader.fs" />
-    <None Include="vertexShaderForGouraudShading.vs" />
-    <None Include="vertexShaderForPhongShading.vs" />
-    <None Include="C:\Users\abtah\Downloads\lab4\lab4\lab4\fragmentShaderForPhongShadingWithTexture.fs" />
-    <None Include="C:\Users\abtah\Downloads\lab4\lab4\lab4\vertexShaderForPhongShadingWithTexture.vs" />
+    <None Include="fragmentShader.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="fragmentShaderForGouraudShading.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="fragmentShaderForPhongShading.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="fragmentShaderForPhongShadingWithTexture.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="vertexShader.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="vertexShaderForGouraudShading.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="vertexShaderForPhongShading.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="vertexShaderForPhongShadingWithTexture.vs">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
