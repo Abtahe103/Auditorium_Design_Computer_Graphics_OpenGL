@@ -231,15 +231,18 @@ int main()
     string specularMapPath = "container2_specular.png";
     string laughEmoPath = "world_map.png";
     string bitfestPath = "bitfest.jpg";
-
+    string floor_tiles_path = "Images/floor_tiles.jpg";
 
     //unsigned int diffMap = loadTexture(diffuseMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     //unsigned int specMap = loadTexture(specularMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     unsigned int laughEmoji = loadTexture(laughEmoPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     unsigned int bitfest = loadTexture(bitfestPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+    unsigned int floor_tiles = loadTexture(floor_tiles_path.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     //unsigned int laughEmojiv2 = loadTexture(laughEmoPath.c_str(), GL_REPEAT, GL_MIRRORED_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
 
     Cube cube = Cube(bitfest, bitfest, 32.0f, 0.0f, 0.0f, 1.0f, 1.0f);
+    Cube floor_tiles_cube = Cube(floor_tiles, floor_tiles, 32.0f, 0.0f, 0.0f, 10.0f, 10.0f);
+    Cube2 floor_tiles_steps = Cube2(floor_tiles, floor_tiles, 32.0f, 0.0f, 0.0f, 10.0f, 10.0f);
     SphereTex spheretex = SphereTex();
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
@@ -540,7 +543,7 @@ int main()
 
         // Modelling Transformation
         glm::mat4 identityMatrix = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-        glm::mat4 translateMatrix, rotateXMatrix, rotateYMatrix, rotateZMatrix, scaleMatrix, model;
+        glm::mat4 translateMatrix, rotation, rotateXMatrix, rotateYMatrix, rotateZMatrix, scaleMatrix, model;
         translateMatrix = glm::translate(identityMatrix, glm::vec3(translate_X, translate_Y, translate_Z));
         rotateXMatrix = glm::rotate(identityMatrix, glm::radians(rotateAngle_X), glm::vec3(1.0f, 0.0f, 0.0f));
         rotateYMatrix = glm::rotate(identityMatrix, glm::radians(rotateAngle_Y), glm::vec3(0.0f, 1.0f, 0.0f));
@@ -571,6 +574,29 @@ int main()
         scaleMatrix = glm::scale(identityMatrix, glm::vec3(0.2f, 0.8f, -1.8f));
         model = translateMatrix * scaleMatrix;
         cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        
+        glm::mat4 translate = glm::mat4(1.0f);
+        //glm::mat4 translate2 = glm::mat4(1.0f);
+        glm::mat4 scale = glm::mat4(1.0f);
+        scale = glm::scale(identityMatrix, glm::vec3(-28.0, 0.2, 40.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-9.0, -0.9, 0.0));
+        model = translate * scale;
+        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        scale = glm::scale(identityMatrix, glm::vec3(22.09, 0.2, 13.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-11.9, -0.7, -13.5));
+        /*rotation = glm::rotate(identityMatrix, glm::radians(30.0f), glm::vec3(0.0f, 1.0f, 0.0f));*/
+        model = translate * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+
+        scale = glm::scale(identityMatrix, glm::vec3(22.09, 0.2, 13.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-11.9, -0.7, 13.5));
+        rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = translate * scale * rotation;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
         //glBindVertexArray(cubeVAO);
         //glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
         //glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -690,10 +716,13 @@ void floor(unsigned int& cubeVAO, Shader& lightingShader)
     glm::mat4 translate = glm::mat4(1.0f);
     //glm::mat4 translate2 = glm::mat4(1.0f);
     glm::mat4 scale = glm::mat4(1.0f);
+    /*
     scale = glm::scale(identityMatrix, glm::vec3(-28.0, 0.2, 40.0));
     translate = glm::translate(identityMatrix, glm::vec3(5.0, -1.0, -20.0));
+    
+*/    
     glm::mat4 model = translate * scale;
-    drawCube(cubeVAO, lightingShader, model, 1.0, 1.0, 1.0, 32.0);
+    //drawCube(cubeVAO, lightingShader, model, 1.0, 1.0, 1.0, 32.0);
 
     scale = glm::scale(identityMatrix, glm::vec3(-16.6, 0.2, 15.0));
     translate = glm::translate(identityMatrix, glm::vec3(-6.4, -0.8, -7.0));
