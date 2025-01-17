@@ -29,7 +29,8 @@ void bed(unsigned int& cubeVAO, Shader& lightingShader, glm::mat4 alTogether);
 void floor(unsigned int& cubeVAO, Shader& lightingShader);
 void frontWall(unsigned int& cubeVAO, Shader& lightingShader);
 void triangleStage(unsigned int& triangleVAO, Shader& lightingShader);
-void chair(unsigned int& cubeVAO, Shader& lightingShader);
+void chair_center(unsigned int& cubeVAO, Shader& lightingShader);
+void chair_left(unsigned int& cubeVAO, Shader& lightingShader, glm::vec3 position);
 void drawRowOfChairs(unsigned int& cubeVAO, Shader& lightingShader);
 void rightWall(unsigned int& cubeVAO, Shader& lightingShader);
 void ambienton_off(Shader& lightingShader);
@@ -633,23 +634,146 @@ int main()
         glm::mat4 translate = glm::mat4(1.0f);
         //glm::mat4 translate2 = glm::mat4(1.0f);
         glm::mat4 scale = glm::mat4(1.0f);
-        scale = glm::scale(identityMatrix, glm::vec3(-28.0, 0.2, 40.0));
+
+        //Entire floor
+        scale = glm::scale(identityMatrix, glm::vec3(28.0, 0.2, 40.0));
         translate = glm::translate(identityMatrix, glm::vec3(-9.0, -0.9, 0.0));
         model = translate * scale;
         floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
 
-        scale = glm::scale(identityMatrix, glm::vec3(22.09, 0.2, 13.0));
-        translate = glm::translate(identityMatrix, glm::vec3(-11.9, -0.7, -13.5));
+        //Center 1st step
+        scale = glm::scale(identityMatrix, glm::vec3(16.6, 0.2, 15.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-14.7, -0.7, 0.0));
+        model = translate * scale;
+        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //center 2nd step
+        scale = glm::scale(identityMatrix, glm::vec3(14.4, 0.2, 15.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-15.8, -0.5, 0.0));
+        model = translate * scale;
+        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //center 3rd step
+        scale = glm::scale(identityMatrix, glm::vec3(12.2, 0.2, 15.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-16.9, -0.3, 0.0));
+        model = translate * scale;
+        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //center 4th step
+        scale = glm::scale(identityMatrix, glm::vec3(10.0, 0.2, 15.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-18.0, -0.1, 0.0));
+        model = translate * scale;
+        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //center 5th step
+        scale = glm::scale(identityMatrix, glm::vec3(7.8, 0.2, 15.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-19.1, 0.1, 0.0));
+        model = translate * scale;
+        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //center 6th step
+        scale = glm::scale(identityMatrix, glm::vec3(5.6, 0.2, 15.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-20.2, 0.3, 0.0));
+        model = translate * scale;
+        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+        
+
+
+
+        //right angular 1st step
+        scale = glm::scale(identityMatrix, glm::vec3(22.13, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-11.94, -0.7, -13.75));
         /*rotation = glm::rotate(identityMatrix, glm::radians(30.0f), glm::vec3(0.0f, 1.0f, 0.0f));*/
         model = translate * scale;
         floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
 
+        //right angular 2nd step
+        scale = glm::scale(identityMatrix, glm::vec3(19.2, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-13.40, -0.5, -13.75));
+        
+        model = translate * scale ;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
 
-        scale = glm::scale(identityMatrix, glm::vec3(22.09, 0.2, 13.0));
-        translate = glm::translate(identityMatrix, glm::vec3(-11.9, -0.7, 13.5));
+        //right angular 3rd step
+        scale = glm::scale(identityMatrix, glm::vec3(16.27, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-14.87, -0.3, -13.75));
+        
+        model = translate * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //right angular 4th step
+        scale = glm::scale(identityMatrix, glm::vec3(13.34, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-16.34, -0.1, -13.75));
+        
+        model = translate * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //right angular 5th step
+        scale = glm::scale(identityMatrix, glm::vec3(10.41, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-17.805, 0.1, -13.75));
+        
+        model = translate * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //right angular 6th step
+        scale = glm::scale(identityMatrix, glm::vec3(7.48, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-19.27, 0.3, -13.75));
+        
+        model = translate * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+
+
+
+
+        //left angular 1st step
+        scale = glm::scale(identityMatrix, glm::vec3(22.13, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-11.92, -0.7, 13.75));
         rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
         model = translate * scale * rotation;
         floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //left angular 2nd step
+        scale = glm::scale(identityMatrix, glm::vec3(19.2, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-13.39, -0.5, 13.75));
+        rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = translate * scale * rotation;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //left angular 3rd step
+        scale = glm::scale(identityMatrix, glm::vec3(16.27, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-14.86, -0.3, 13.75));
+        rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = translate * scale * rotation;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //left angular 4th step
+        scale = glm::scale(identityMatrix, glm::vec3(13.34, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-16.33, -0.1, 13.75));
+        rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = translate * scale * rotation;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //left angular 5th step
+        scale = glm::scale(identityMatrix, glm::vec3(10.41, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-17.80, 0.1, 13.75));
+        rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = translate * scale * rotation;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //left angular 6th step
+        scale = glm::scale(identityMatrix, glm::vec3(7.48, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-19.27, 0.3, 13.75));
+        rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = translate * scale * rotation;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+
+
+
+
+
+
 
         //glBindVertexArray(cubeVAO);
         //glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
@@ -778,7 +902,7 @@ void floor(unsigned int& cubeVAO, Shader& lightingShader)
     glm::mat4 model = translate * scale;
     //drawCube(cubeVAO, lightingShader, model, 1.0, 1.0, 1.0, 32.0);
 
-    scale = glm::scale(identityMatrix, glm::vec3(-16.6, 0.2, 15.0));
+    /*scale = glm::scale(identityMatrix, glm::vec3(-16.6, 0.2, 15.0));
     translate = glm::translate(identityMatrix, glm::vec3(-6.4, -0.8, -7.0));
     model = translate * scale;
     drawCube(cubeVAO, lightingShader, model, 1.0, 1.0, 1.0, 32.0);
@@ -791,7 +915,7 @@ void floor(unsigned int& cubeVAO, Shader& lightingShader)
     scale = glm::scale(identityMatrix, glm::vec3(-12.2, 0.2, 15.0));
     translate = glm::translate(identityMatrix, glm::vec3(-10.8, -0.4, -7.0));
     model = translate * scale;
-    drawCube(cubeVAO, lightingShader, model, 1.0, 1.0, 1.0, 32.0);
+    drawCube(cubeVAO, lightingShader, model, 1.0, 1.0, 1.0, 32.0);*/
 
     /*scale = glm::scale(identityMatrix, glm::vec3(0.1, 2.0, 0.1));
     translate = glm::translate(identityMatrix, glm::vec3(-5.0, -0.8, -5.0));
@@ -874,7 +998,7 @@ void triangleStage(unsigned int& triangleVAO, Shader& lightingShader) {
     drawCube(triangleVAO, lightingShader, model, 0.112, 0.167, 0.231, 32.0);
 }
 
-void chair(unsigned int& cubeVAO, Shader& lightingShader, glm::vec3 position) {
+void chair_center(unsigned int& cubeVAO, Shader& lightingShader, glm::vec3 position) {
     lightingShader.use();
 
     // Identity matrix
@@ -898,26 +1022,228 @@ void chair(unsigned int& cubeVAO, Shader& lightingShader, glm::vec3 position) {
     drawCube(cubeVAO, lightingShader, model, 0.112, 0.167, 0.231, 32.0);
 }
 
+void chair_left(unsigned int& cubeVAO, Shader& lightingShader, glm::vec3 position) {
+    lightingShader.use();
+
+    // Identity matrix
+    glm::mat4 identityMatrix = glm::mat4(1.0f);
+    glm::mat4 translate;
+    glm::mat4 scale;
+    glm::mat4 rotation;
+    glm::mat4 model;
+
+    // Chair base
+    scale = glm::scale(identityMatrix, glm::vec3(1.0, 0.4, 1.0));
+    translate = glm::translate(identityMatrix, position + glm::vec3(-5.7, -0.8, 8.5)); // Adjust position for the base
+    rotation = glm::rotate(identityMatrix, glm::radians(25.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    model = translate * rotation * scale ;
+    drawCube(cubeVAO, lightingShader, model, 0.112, 0.167, 0.231, 32.0);
+
+    // Chair back support
+    scale = glm::scale(identityMatrix, glm::vec3(0.4, 1.0, 1.0));
+    translate = glm::translate(identityMatrix, position + glm::vec3(-5.9, -0.8, 8.6)); // Adjust position for the back support
+    rotation = glm::rotate(identityMatrix, glm::radians(25.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    model = translate * rotation * scale ;
+    drawCube(cubeVAO, lightingShader, model, 0.112, 0.167, 0.231, 32.0);
+}
+
+void chair_right(unsigned int& cubeVAO, Shader& lightingShader, glm::vec3 position) {
+    lightingShader.use();
+
+    // Identity matrix
+    glm::mat4 identityMatrix = glm::mat4(1.0f);
+    glm::mat4 translate;
+    glm::mat4 scale;
+    glm::mat4 rotation;
+    glm::mat4 model;
+
+    // Chair base
+    scale = glm::scale(identityMatrix, glm::vec3(1.0, 0.4, 1.0));
+    translate = glm::translate(identityMatrix, position + glm::vec3(-5.7, -0.8, -9.3)); // Adjust position for the base
+    rotation = glm::rotate(identityMatrix, glm::radians(-25.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    model = translate * rotation * scale;
+    drawCube(cubeVAO, lightingShader, model, 0.112, 0.167, 0.231, 32.0);
+
+    // Chair back support
+    scale = glm::scale(identityMatrix, glm::vec3(0.4, 1.0, 1.0));
+    translate = glm::translate(identityMatrix, position + glm::vec3(-5.9, -0.8, -9.4)); // Adjust position for the back support
+    rotation = glm::rotate(identityMatrix, glm::radians(-25.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    model = translate * rotation * scale;
+    drawCube(cubeVAO, lightingShader, model, 0.112, 0.167, 0.231, 32.0);
+}
+
 
 void drawRowOfChairs(unsigned int& cubeVAO, Shader& lightingShader) {
+    float angleDegrees = 66.0f;
+    float angleRadians = glm::radians(angleDegrees);
+    float spacing = 1.5f; // Distance between chairs along the angled line
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(angleRadians),
+            0.0f,
+            i * spacing * sin(angleRadians)); // Adjust z based on sin of the angle
+        chair_left(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(68.5f)) - 2.25f,
+            0.2f,
+            i * spacing * sin(glm::radians(68.5f))); // Adjust z based on sin of the angle
+        chair_left(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(72.0f)) - 4.5f,
+            0.4f,
+            i * spacing * sin(glm::radians(72.0f))); // Adjust z based on sin of the angle
+        chair_left(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(75.5f)) - 6.75f,
+            0.6f,
+            i * spacing * sin(glm::radians(75.5f))); // Adjust z based on sin of the angle
+        chair_left(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(78.5f)) - 9.0f,
+            0.8f,
+            i * spacing * sin(glm::radians(78.5f))); // Adjust z based on sin of the angle
+        chair_left(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(82.0f)) - 11.25f,
+            1.0f,
+            i * spacing * sin(glm::radians(82.0f))); // Adjust z based on sin of the angle
+        chair_left(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(85.5f)) - 13.5f,
+            1.2f,
+            i * spacing * sin(glm::radians(85.5f))); // Adjust z based on sin of the angle
+        chair_left(cubeVAO, lightingShader, position);
+    }
+
+
+
+
+
+
+
+
+
+    //right chairs
+
+     angleDegrees = -66.0f;
+     angleRadians = glm::radians(angleDegrees);
+     spacing = 1.5f; // Distance between chairs along the angled line
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(angleRadians),
+            0.0f,
+            i * spacing * sin(angleRadians)); // Adjust z based on sin of the angle
+        chair_right(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(-68.5f)) - 2.23f,
+            0.2f,
+            i * spacing * sin(glm::radians(-68.5f))); // Adjust z based on sin of the angle
+        chair_right(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(-72.0f)) - 4.3f,
+            0.4f,
+            i * spacing * sin(glm::radians(-72.0f))); // Adjust z based on sin of the angle
+        chair_right(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(-74.5f)) - 6.71f,
+            0.6f,
+            i * spacing * sin(glm::radians(-75.5f))); // Adjust z based on sin of the angle
+        chair_right(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(-78.5f)) - 8.8f,
+            0.8f,
+            i * spacing * sin(glm::radians(-78.5f))); // Adjust z based on sin of the angle
+        chair_right(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(-81.0f)) - 11.2f,
+            1.0f,
+            i * spacing * sin(glm::radians(-82.0f))); // Adjust z based on sin of the angle
+        chair_right(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(-85.5f)) - 13.2f,
+            1.2f,
+            i * spacing * sin(glm::radians(-85.5f))); // Adjust z based on sin of the angle
+        chair_right(cubeVAO, lightingShader, position);
+    }
+
+
+
+
+
+
+
+
     for (int i = 0; i < 7; ++i) {
         glm::vec3 position = glm::vec3(0.0f, 0.0f, i*1.5f); // Space chairs by 3 units along the x-axis
-        chair(cubeVAO, lightingShader, position);
+        chair_center(cubeVAO, lightingShader, position);
     }
 
     for (int i = 0; i < 7; ++i) {
         glm::vec3 position = glm::vec3(-2.2f, 0.2f, i * 1.5f); // Space chairs by 3 units along the x-axis
-        chair(cubeVAO, lightingShader, position);
+        chair_center(cubeVAO, lightingShader, position);
     }
 
     for (int i = 0; i < 7; ++i) {
         glm::vec3 position = glm::vec3(-4.4f, 0.4f, i * 1.5f); // Space chairs by 3 units along the x-axis
-        chair(cubeVAO, lightingShader, position);
+        chair_center(cubeVAO, lightingShader, position);
     }
 
     for (int i = 0; i < 7; ++i) {
         glm::vec3 position = glm::vec3(-6.6f, 0.6f, i * 1.5f); // Space chairs by 3 units along the x-axis
-        chair(cubeVAO, lightingShader, position);
+        chair_center(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        glm::vec3 position = glm::vec3(-8.8f, 0.8f, i * 1.5f); // Space chairs by 3 units along the x-axis
+        chair_center(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        glm::vec3 position = glm::vec3(-11.0f, 1.0f, i * 1.5f); // Space chairs by 3 units along the x-axis
+        chair_center(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        glm::vec3 position = glm::vec3(-13.2f, 1.2f, i * 1.5f); // Space chairs by 3 units along the x-axis
+        chair_center(cubeVAO, lightingShader, position);
     }
     
 }

@@ -11,16 +11,16 @@
       "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:fragmentShaderForPhongShadingWithTexture.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\pointLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:pointLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShaderForPhongShading.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:fragmentShaderForPhongShading.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\pointLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:pointLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\directionalLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -74,13 +74,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "pointLight.h",
               "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\pointLight.h",
               "RelativeDocumentMoniker": "pointLight.h",
               "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\pointLight.h",
               "RelativeToolTip": "pointLight.h",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAswH0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswEQAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-01-16T10:18:19.137Z",
               "EditorCaption": ""
@@ -93,14 +93,14 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAFsCAAAAAAAAAAAUwG0CAABjAAAAAAAAAA==",
+              "ViewState": "AgIAAFkCAAAAAAAAAAAAACwEAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-16T10:12:00.142Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "cube.h",
               "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\cube.h",
               "RelativeDocumentMoniker": "cube.h",
@@ -108,8 +108,7 @@
               "RelativeToolTip": "cube.h",
               "ViewState": "AgIAAEgAAAAAAAAAAAAAALEBAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-16T14:32:19.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T14:32:19.788Z"
             },
             {
               "$type": "Document",
@@ -119,14 +118,14 @@
               "RelativeDocumentMoniker": "fragmentShaderForPhongShadingWithTexture.fs",
               "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShaderForPhongShadingWithTexture.fs",
               "RelativeToolTip": "fragmentShaderForPhongShadingWithTexture.fs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAABEAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-16T14:15:32.605Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "fragmentShaderForPhongShading.fs",
               "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShaderForPhongShading.fs",
               "RelativeDocumentMoniker": "fragmentShaderForPhongShading.fs",
@@ -134,8 +133,7 @@
               "RelativeToolTip": "fragmentShaderForPhongShading.fs",
               "ViewState": "AgIAAIYAAAAAAAAAAAAmwKIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-16T14:15:11.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T14:15:11.733Z"
             },
             {
               "$type": "Document",
