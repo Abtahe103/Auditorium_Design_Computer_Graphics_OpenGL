@@ -7,28 +7,60 @@
       "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShaderForPhongShadingWithTexture.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:fragmentShaderForPhongShadingWithTexture.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fractal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:fractal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\pointLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:pointLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShader.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:fragmentShader.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShaderForPhongShading.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:fragmentShaderForPhongShading.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\vertexShader.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:vertexShader.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\cylinder.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:cylinder.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\curved_wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:curved_wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\directionalLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:directionalLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShaderForPhongShadingWithTexture.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:fragmentShaderForPhongShadingWithTexture.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\vertexShaderForPhongShadingWithTexture.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:vertexShaderForPhongShadingWithTexture.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\vertexShaderForPhongShading.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:vertexShaderForPhongShading.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShaderForPhongShading.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:fragmentShaderForPhongShading.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\pointLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:pointLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\directionalLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|solutionrelative:directionalLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89F848AE-770F-4E5F-A59F-61FA93A7440F}|Auditorium.vcxproj|D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\SpotLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -42,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,19 +82,97 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SpotLight.h",
-              "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\SpotLight.h",
-              "RelativeDocumentMoniker": "SpotLight.h",
-              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\SpotLight.h",
-              "RelativeToolTip": "SpotLight.h",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAUwGEAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-16T13:52:37.831Z"
+              "DocumentIndex": 2,
+              "Title": "fragmentShader.fs",
+              "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShader.fs",
+              "RelativeDocumentMoniker": "fragmentShader.fs",
+              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShader.fs",
+              "RelativeToolTip": "fragmentShader.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-19T21:25:52.583Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "vertexShader.vs",
+              "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\vertexShader.vs",
+              "RelativeDocumentMoniker": "vertexShader.vs",
+              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\vertexShader.vs",
+              "RelativeToolTip": "vertexShader.vs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-19T21:25:41.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "cylinder.h",
+              "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\cylinder.h",
+              "RelativeDocumentMoniker": "cylinder.h",
+              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\cylinder.h",
+              "RelativeToolTip": "cylinder.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAGoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-19T20:09:09.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fractal.h",
+              "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fractal.h",
+              "RelativeDocumentMoniker": "fractal.h",
+              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fractal.h",
+              "RelativeToolTip": "fractal.h",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-19T18:00:27.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "camera.h",
+              "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\camera.h",
+              "RelativeDocumentMoniker": "camera.h",
+              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\camera.h",
+              "RelativeToolTip": "camera.h",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAACQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-19T09:53:52.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "vertexShaderForPhongShadingWithTexture.vs",
+              "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\vertexShaderForPhongShadingWithTexture.vs",
+              "RelativeDocumentMoniker": "vertexShaderForPhongShadingWithTexture.vs",
+              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\vertexShaderForPhongShadingWithTexture.vs",
+              "RelativeToolTip": "vertexShaderForPhongShadingWithTexture.vs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-17T16:01:13.133Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "curved_wall.h",
+              "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\curved_wall.h",
+              "RelativeDocumentMoniker": "curved_wall.h",
+              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\curved_wall.h",
+              "RelativeToolTip": "curved_wall.h",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-17T12:54:16.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "directionalLight.h",
               "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\directionalLight.h",
               "RelativeDocumentMoniker": "directionalLight.h",
@@ -74,16 +184,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 13,
               "Title": "pointLight.h",
               "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\pointLight.h",
               "RelativeDocumentMoniker": "pointLight.h",
               "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\pointLight.h",
               "RelativeToolTip": "pointLight.h",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAswEQAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAAH0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-16T10:18:19.137Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T10:18:19.137Z"
             },
             {
               "$type": "Document",
@@ -91,53 +200,65 @@
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\main.cpp*",
-              "RelativeToolTip": "main.cpp*",
-              "ViewState": "AgIAABgEAAAAAAAAAAAAACwEAABUAAAAAAAAAA==",
+              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAKwDAAAAAAAAAAAswM0DAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-16T10:12:00.142Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "cube.h",
               "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\cube.h",
               "RelativeDocumentMoniker": "cube.h",
               "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\cube.h",
               "RelativeToolTip": "cube.h",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAALEBAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAANMBAAAAAAAAAAAAAP0BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-01-16T14:32:19.788Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "fragmentShaderForPhongShadingWithTexture.fs",
               "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShaderForPhongShadingWithTexture.fs",
               "RelativeDocumentMoniker": "fragmentShaderForPhongShadingWithTexture.fs",
               "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShaderForPhongShadingWithTexture.fs",
               "RelativeToolTip": "fragmentShaderForPhongShadingWithTexture.fs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAC0AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-16T14:15:32.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T14:15:32.605Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "fragmentShaderForPhongShading.fs",
               "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShaderForPhongShading.fs",
               "RelativeDocumentMoniker": "fragmentShaderForPhongShading.fs",
               "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\fragmentShaderForPhongShading.fs",
               "RelativeToolTip": "fragmentShaderForPhongShading.fs",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAmwKIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAwwDQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-16T14:15:11.733Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
+              "Title": "sphere.h",
+              "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\sphere.h",
+              "RelativeDocumentMoniker": "sphere.h",
+              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\sphere.h",
+              "RelativeToolTip": "sphere.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAKkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-17T12:56:15.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "vertexShaderForPhongShading.vs",
               "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\vertexShaderForPhongShading.vs",
               "RelativeDocumentMoniker": "vertexShaderForPhongShading.vs",
@@ -146,6 +267,18 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-16T14:15:06.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SpotLight.h",
+              "DocumentMoniker": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\SpotLight.h",
+              "RelativeDocumentMoniker": "SpotLight.h",
+              "ToolTip": "D:\\4-2 KUET\\CSE 4208\\Assignment\\Auditorium\\Auditorium\\SpotLight.h",
+              "RelativeToolTip": "SpotLight.h",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAUwGEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-16T13:52:37.831Z"
             }
           ]
         }

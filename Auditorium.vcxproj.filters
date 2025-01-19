@@ -50,6 +50,15 @@
     <ClInclude Include="directionalLight.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="curved_wall.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fractal.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cylinder.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragmentShader.fs">

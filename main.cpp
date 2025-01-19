@@ -13,6 +13,9 @@
 #include "stb_image.h"
 #include "cube.h"
 #include "SpotLight.h"
+#include "curved_wall.h"
+#include "fractal.h"
+#include "cylinder.h"
 
 #include <iostream>
 
@@ -97,10 +100,11 @@ BasicCamera basic_camera(eyeX, eyeY, eyeZ, lookAtX, lookAtY, lookAtZ, V);
 
 // positions of the point lights
 glm::vec3 pointLightPositions[] = {
-    glm::vec3(4.50f,  2.50f,  1.5f),
-    glm::vec3(4.50f,  2.50f,  -1.5f),
+    
+    glm::vec3(-30.50f, 2.50f,  25.5f),
     glm::vec3(-10.50f, 2.50f,  20.5f),
-    glm::vec3(-10.50f, 2.50f,  -20.5f)
+    glm::vec3(4.50f,  2.50f,  1.5f),
+    glm::vec3(4.50f,  2.50f,  -1.5f)
 };
 
 PointLight pointlight1(
@@ -228,23 +232,40 @@ int main()
     //Shader lightingShader("vertexShaderForGouraudShading.vs", "fragmentShaderForGouraudShading.fs");
     Shader ourShader("vertexShader.vs", "fragmentShader.fs");
 
-    string diffuseMapPath = "container2.png";
-    string specularMapPath = "container2_specular.png";
+  /*  string diffuseMapPath = "container2.png";
+    string specularMapPath = "container2_specular.png";*/
     string laughEmoPath = "world_map.png";
     string bitfestPath = "bitfest.jpg";
     string floor_tiles_path = "Images/floor_tiles.jpg";
+    string brick_wall_path = "Images/Bricks_curve_wall.jpg";
+    string tree_pot_path = "Images/tree_pot.jpg";
+    string grass_path = "Images/grass.jpg";
 
-    unsigned int diffMap = loadTexture(diffuseMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
-    unsigned int specMap = loadTexture(specularMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+    /*unsigned int diffMap = loadTexture(diffuseMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+    unsigned int specMap = loadTexture(specularMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);*/
     unsigned int laughEmoji = loadTexture(laughEmoPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     unsigned int bitfest = loadTexture(bitfestPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     unsigned int floor_tiles = loadTexture(floor_tiles_path.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+    unsigned int brick_curve_wall = loadTexture(brick_wall_path.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+    unsigned int tree_pot = loadTexture(tree_pot_path.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+    unsigned int grass = loadTexture(grass_path.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+
     //unsigned int laughEmojiv2 = loadTexture(laughEmoPath.c_str(), GL_REPEAT, GL_MIRRORED_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
 
     Cube cube = Cube(bitfest, bitfest, 32.0f, 0.0f, 0.0f, 1.0f, 1.0f);
     Cube floor_tiles_cube = Cube(floor_tiles, floor_tiles, 50.0f, 0.0f, 0.0f, 10.0f, 10.0f);
     Cube2 floor_tiles_steps = Cube2(floor_tiles, floor_tiles, 50.0f, 0.0f, 0.0f, 10.0f, 10.0f);
+    CubicCurvedWallTex curve_wall_right = CubicCurvedWallTex();
+    CubicCurvedWallTex curve_wall_left = CubicCurvedWallTex();
+
+    FractalTree tree = FractalTree();
+
     SphereTex spheretex = SphereTex();
+
+    Cylinder treepot = Cylinder();
+    Cylinder treepot_grass = Cylinder(0.8f);
+
+
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -492,7 +513,7 @@ int main()
         pointlight4.setUpPointLight(lightingShader);
 
 
-        lightingShader.setVec3("directionalLight.directiaon", 0.5f, -3.0f, -3.0f);
+        lightingShader.setVec3("directionalLight.directiaon", 0.0f, -1.0f, 0.0f);
         lightingShader.setVec3("directionalLight.ambient", .5f, .5f, .5f);
         lightingShader.setVec3("directionalLight.diffuse", .8f, .8f, .8f);
         lightingShader.setVec3("directionalLight.specular", 1.0f, 1.0f, 1.0f);
@@ -501,7 +522,7 @@ int main()
         lightingShader.setBool("directionLightOn", directionalLightOn);
 
 
-        lightingShader.setVec3("directionalLight.direction", 0.5f, -3.0f, -3.0f);
+        lightingShader.setVec3("directionalLight.direction", 0.0f, -1.0f, 0.0f);
         if (AmbientON) {
             lightingShader.setVec3("directionalLight.ambient", 0.2f, 0.2f, 0.2f);
             lightingShader.setVec3("spotLight.ambient", 0.2f, 0.2f, 0.2f);
@@ -577,7 +598,7 @@ int main()
         ////// point light 4
         pointlight4.setUpPointLight(lightingShaderWithTexture);
 
-        lightingShaderWithTexture.setVec3("directionalLight.directiaon", 0.5f, -3.0f, -3.0f);
+        lightingShaderWithTexture.setVec3("directionalLight.directiaon", 0.0f, -1.0f, 0.0f);
         lightingShaderWithTexture.setVec3("directionalLight.ambient", .5f, .5f, .5f);
         lightingShaderWithTexture.setVec3("directionalLight.diffuse", .8f, .8f, .8f);
         lightingShaderWithTexture.setVec3("directionalLight.specular", 1.0f, 1.0f, 1.0f);
@@ -586,7 +607,7 @@ int main()
         lightingShaderWithTexture.setBool("directionLightOn", directionalLightOn);
 
 
-        lightingShaderWithTexture.setVec3("directionalLight.direction", 0.5f, -3.0f, -3.0f);
+        lightingShaderWithTexture.setVec3("directionalLight.direction", 0.0f, -1.0f, 0.0f);
         if (AmbientON) {
             lightingShaderWithTexture.setVec3("directionalLight.ambient", 0.2f, 0.2f, 0.2f);
             lightingShaderWithTexture.setVec3("spotLight.ambient", 0.2f, 0.2f, 0.2f);
@@ -619,27 +640,96 @@ int main()
         lightingShaderWithTexture.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(40.5f)));
         
 
+
+        ///............................... Object drawing....................................////
+
+
         glm::mat4 modelMatrixForContainer = glm::mat4(1.0f);
         modelMatrixForContainer = glm::translate(modelMatrixForContainer, glm::vec3(2.0f, 1.4f, 3.8f));
         
         spheretex.drawSphere(lightingShaderWithTexture,laughEmoji ,modelMatrixForContainer);
 
+
+
+
+        // right curved wall
+        modelMatrixForContainer = glm::mat4(1.0f);
+        translateMatrix = glm::translate(identityMatrix, glm::vec3(-18.0f, 3.0f, -10.0f));
+        rotation = glm::rotate(identityMatrix, glm::radians(150.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        scaleMatrix = glm::scale(identityMatrix, glm::vec3(1.2f, 0.8f, 1.8f));
+        modelMatrixForContainer = translateMatrix * rotation * scaleMatrix;
+        curve_wall_right.drawCubicCurvedWall(lightingShaderWithTexture,brick_curve_wall, modelMatrixForContainer);
+
+
+        // left curved wall
+        translateMatrix = glm::translate(identityMatrix, glm::vec3(-10.0f, 3.0f, 13.0f));
+        rotation = glm::rotate(identityMatrix, glm::radians(100.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        rotateXMatrix = glm::rotate(rotation, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        scaleMatrix = glm::scale(identityMatrix, glm::vec3(1.45f, 0.8f, 1.8f));
+        modelMatrixForContainer = translateMatrix * rotateXMatrix * scaleMatrix;
+        curve_wall_right.drawCubicCurvedWall(lightingShaderWithTexture, brick_curve_wall, modelMatrixForContainer);
+
+
+
+        glm::mat4 translate = glm::mat4(1.0f);
+        //glm::mat4 translate2 = glm::mat4(1.0f);
+        glm::mat4 scale = glm::mat4(1.0f);
+
+
+
+        //right wall straight outside 1st
+        scale = glm::scale(identityMatrix, glm::vec3(10.0, 0.3, 6.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-8.0, 2.2, -24.5));
+        rotation = glm::rotate(identityMatrix, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        rotateXMatrix = glm::rotate(rotation, glm::radians(-10.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+        model = translate * rotateXMatrix * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //right wall straight outside 2nd
+        scale = glm::scale(identityMatrix, glm::vec3(10.0, 0.3, 4.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-4.0, 1.2, -23.0));
+        rotation = glm::rotate(identityMatrix, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        rotateXMatrix = glm::rotate(rotation, glm::radians(-5.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+        model = translate * rotateXMatrix * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+
+
+        //left wall straight outside 1st
+        scale = glm::scale(identityMatrix, glm::vec3(10.0, 0.3, 6.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-8.0, 2.2, 24.5));
+        rotation = glm::rotate(identityMatrix, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        rotateXMatrix = glm::rotate(rotation, glm::radians(10.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+        model = translate * rotateXMatrix * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //left wall straight outside 2nd
+        scale = glm::scale(identityMatrix, glm::vec3(10.0, 0.3, 4.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-4.0, 1.2, 23));
+        rotation = glm::rotate(identityMatrix, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        rotateXMatrix = glm::rotate(rotation, glm::radians(5.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+        model = translate * rotateXMatrix * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        
+
+        
+        /// ..... 1st floor........//////
+
+        ///bitfest
         glm::mat4 modelMatrixForContainer2 = glm::mat4(1.0f);
         translateMatrix = glm::translate(identityMatrix, glm::vec3(1.2f, 0.7f, 0.4f));
         scaleMatrix = glm::scale(identityMatrix, glm::vec3(0.2f, 0.8f, -1.8f));
         model = translateMatrix * scaleMatrix;
         cube.drawCubeWithTexture(lightingShaderWithTexture, model);
 
-        
-        glm::mat4 translate = glm::mat4(1.0f);
-        //glm::mat4 translate2 = glm::mat4(1.0f);
-        glm::mat4 scale = glm::mat4(1.0f);
-
         //Entire floor
         scale = glm::scale(identityMatrix, glm::vec3(28.0, 0.2, 40.0));
         translate = glm::translate(identityMatrix, glm::vec3(-9.0, -0.9, 0.0));
         model = translate * scale;
         floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+
 
         //Center 1st step
         scale = glm::scale(identityMatrix, glm::vec3(16.6, 0.2, 15.0));
@@ -770,6 +860,121 @@ int main()
 
 
 
+        ////...........2nd floor..........//////
+
+        //center 4th step
+        scale = glm::scale(identityMatrix, glm::vec3(10.0, 0.2, 15.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-18.0, 5.0, 0.0));
+        model = translate * scale;
+        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //center 5th step
+        scale = glm::scale(identityMatrix, glm::vec3(7.8, 0.2, 15.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-19.1, 5.1, 0.0));
+        model = translate * scale;
+        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //center 6th step
+        scale = glm::scale(identityMatrix, glm::vec3(5.6, 0.2, 15.0));
+        translate = glm::translate(identityMatrix, glm::vec3(-20.2, 5.3, 0.0));
+        model = translate * scale;
+        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+
+        //right angular 4th step
+        scale = glm::scale(identityMatrix, glm::vec3(13.34, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-16.34, 5.0, -13.75));
+
+        model = translate * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //right angular 5th step
+        scale = glm::scale(identityMatrix, glm::vec3(10.41, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-17.805, 5.1, -13.75));
+
+        model = translate * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //right angular 6th step
+        scale = glm::scale(identityMatrix, glm::vec3(7.48, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-19.27, 5.3, -13.75));
+
+        model = translate * scale;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+
+
+
+        //left angular 4th step
+        scale = glm::scale(identityMatrix, glm::vec3(13.34, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-16.33, 5.0, 13.75));
+        rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = translate * scale * rotation;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //left angular 5th step
+        scale = glm::scale(identityMatrix, glm::vec3(10.41, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-17.80, 5.1, 13.75));
+        rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = translate * scale * rotation;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+        //left angular 6th step
+        scale = glm::scale(identityMatrix, glm::vec3(7.48, 0.2, 12.5));
+        translate = glm::translate(identityMatrix, glm::vec3(-19.27, 5.3, 13.75));
+        rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = translate * scale * rotation;
+        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+
+
+        ////.............Outside auditorium...................///////////////
+        /// tree draw left
+        translateMatrix = glm::translate(identityMatrix, glm::vec3(-30.0f, 1.0f, 20.0f));
+        scaleMatrix = glm::scale(identityMatrix, glm::vec3(1.0f, 1.0f, 1.8f));
+        model = translateMatrix * scaleMatrix;
+        tree.drawTree(lightingShader, model);
+
+        translateMatrix = glm::translate(identityMatrix, glm::vec3(-30.0f, 1.0f, 20.0f));
+        scaleMatrix = glm::scale(identityMatrix, glm::vec3(1.0f, 1.0f, 1.8f));
+        rotation = glm::rotate(identityMatrix, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        model = translateMatrix * rotation * scaleMatrix;
+        tree.drawTree(lightingShader, model);
+
+
+        ///treepot draw left
+
+        modelMatrixForContainer = glm::translate(identityMatrix, glm::vec3(-30.0f, 0.0f, 20.0f));
+
+        treepot.drawCylinder(lightingShaderWithTexture, tree_pot, modelMatrixForContainer);
+
+        modelMatrixForContainer = glm::translate(identityMatrix, glm::vec3(-30.0f, 0.1f, 20.0f));
+
+        treepot_grass.drawCylinder(lightingShaderWithTexture, grass, modelMatrixForContainer);
+
+
+        /// tree draw right
+        translateMatrix = glm::translate(identityMatrix, glm::vec3(-30.0f, 1.0f, -20.0f));
+        scaleMatrix = glm::scale(identityMatrix, glm::vec3(1.0f, 1.0f, 1.8f));
+        model = translateMatrix * scaleMatrix;
+        tree.drawTree(lightingShader, model);
+
+        translateMatrix = glm::translate(identityMatrix, glm::vec3(-30.0f, 1.0f, -20.0f));
+        scaleMatrix = glm::scale(identityMatrix, glm::vec3(1.0f, 1.0f, 1.8f));
+        rotation = glm::rotate(identityMatrix, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        model = translateMatrix * rotation * scaleMatrix;
+        tree.drawTree(lightingShader, model);
+
+
+        ///treepot draw right
+
+        modelMatrixForContainer = glm::translate(identityMatrix, glm::vec3(-30.0f, 0.0f, -20.0f));
+
+        treepot.drawCylinder(lightingShaderWithTexture, tree_pot, modelMatrixForContainer);
+
+        modelMatrixForContainer = glm::translate(identityMatrix, glm::vec3(-30.0f, 0.1f, -20.0f));
+
+        treepot_grass.drawCylinder(lightingShaderWithTexture, grass, modelMatrixForContainer);
+
 
 
 
@@ -894,13 +1099,13 @@ void floor(unsigned int& cubeVAO, Shader& lightingShader)
     glm::mat4 translate = glm::mat4(1.0f);
     //glm::mat4 translate2 = glm::mat4(1.0f);
     glm::mat4 scale = glm::mat4(1.0f);
-    /*
-    scale = glm::scale(identityMatrix, glm::vec3(-28.0, 0.2, 40.0));
-    translate = glm::translate(identityMatrix, glm::vec3(5.0, -1.0, -20.0));
     
-*/    
+    scale = glm::scale(identityMatrix, glm::vec3(100.0, 0.2, 100.0));
+    translate = glm::translate(identityMatrix, glm::vec3(-50.0, -1.5, -50.0));
+    
+    
     glm::mat4 model = translate * scale;
-    //drawCube(cubeVAO, lightingShader, model, 1.0, 1.0, 1.0, 32.0);
+    drawCube(cubeVAO, lightingShader, model, 0.8, 0.8, 0.8, 100.0);
 
     /*scale = glm::scale(identityMatrix, glm::vec3(-16.6, 0.2, 15.0));
     translate = glm::translate(identityMatrix, glm::vec3(-6.4, -0.8, -7.0));
@@ -1078,6 +1283,10 @@ void drawRowOfChairs(unsigned int& cubeVAO, Shader& lightingShader) {
     float angleRadians = glm::radians(angleDegrees);
     float spacing = 1.5f; // Distance between chairs along the angled line
 
+
+/////////..................1st floor........................./////////
+
+
     for (int i = 0; i < 7; ++i) {
         // Calculate the position for each chair along a 25-degree line
         glm::vec3 position = glm::vec3(i * spacing * cos(angleRadians),
@@ -1244,6 +1453,78 @@ void drawRowOfChairs(unsigned int& cubeVAO, Shader& lightingShader) {
     for (int i = 0; i < 7; ++i) {
         glm::vec3 position = glm::vec3(-13.2f, 1.2f, i * 1.5f); // Space chairs by 3 units along the x-axis
         chair_center(cubeVAO, lightingShader, position);
+    }
+
+
+//////.............2nd floor..............///////
+
+    /// center chairs
+    for (int i = 0; i < 7; ++i) {
+        glm::vec3 position = glm::vec3(-8.8f, 0.8f+5.0f, i * 1.5f); // Space chairs by 3 units along the x-axis
+        chair_center(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        glm::vec3 position = glm::vec3(-11.0f, 1.0f+5.0f, i * 1.5f); // Space chairs by 3 units along the x-axis
+        chair_center(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        glm::vec3 position = glm::vec3(-13.2f, 1.2f+5.0f, i * 1.5f); // Space chairs by 3 units along the x-axis
+        chair_center(cubeVAO, lightingShader, position);
+    }
+
+
+    /// right chairs
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(-78.5f)) - 8.8f,
+            0.8f+5.0f,
+            i * spacing * sin(glm::radians(-78.5f))); // Adjust z based on sin of the angle
+        chair_right(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(-81.0f)) - 11.2f,
+            1.0f+5.0f,
+            i * spacing * sin(glm::radians(-82.0f))); // Adjust z based on sin of the angle
+        chair_right(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(-85.5f)) - 13.2f,
+            1.2f+5.0f,
+            i * spacing * sin(glm::radians(-85.5f))); // Adjust z based on sin of the angle
+        chair_right(cubeVAO, lightingShader, position);
+    }
+
+
+    /// left chairs
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(78.5f)) - 9.0f,
+            0.8f+5.0f,
+            i * spacing * sin(glm::radians(78.5f))); // Adjust z based on sin of the angle
+        chair_left(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(82.0f)) - 11.25f,
+            1.0f+5.0f,
+            i * spacing * sin(glm::radians(82.0f))); // Adjust z based on sin of the angle
+        chair_left(cubeVAO, lightingShader, position);
+    }
+
+    for (int i = 0; i < 7; ++i) {
+        // Calculate the position for each chair along a 25-degree line
+        glm::vec3 position = glm::vec3(i * spacing * cos(glm::radians(85.5f)) - 13.5f,
+            1.2f+5.0f,
+            i * spacing * sin(glm::radians(85.5f))); // Adjust z based on sin of the angle
+        chair_left(cubeVAO, lightingShader, position);
     }
     
 }

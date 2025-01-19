@@ -140,7 +140,10 @@
     <ClInclude Include="basic_camera.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="cube.h" />
+    <ClInclude Include="curved_wall.h" />
+    <ClInclude Include="cylinder.h" />
     <ClInclude Include="directionalLight.h" />
+    <ClInclude Include="fractal.h" />
     <ClInclude Include="pointLight.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="sphere.h" />
