@@ -106,6 +106,9 @@ glm::vec3 pointLightPositions[] = {
     glm::vec3(-10.50f, 2.50f,  20.5f),
     glm::vec3(4.50f,  2.50f,  1.5f),
     glm::vec3(4.50f,  2.50f,  -1.5f),
+
+
+    //// center lights
     glm::vec3(-7.5, 10.7, 0.0),
     glm::vec3(-7.5, 10.7, 5.0),
     glm::vec3(-7.5, 10.7, -5.0),
@@ -132,11 +135,67 @@ glm::vec3 pointLightPositions[] = {
     glm::vec3(-18.2, 9.7, -5.0),
 
 
+    // right lights
+    glm::vec3(-7.2, 10.7, -8.5),
+    glm::vec3(-5.2, 10.7, -13.5),
+    glm::vec3(-3.2, 10.7, -18.5),
+
+
+    glm::vec3(-9.6, 10.5, -8.5),
+    glm::vec3(-7.9, 10.5, -13.5),
+    glm::vec3(-5.9, 10.5, -18.5),
+
+    glm::vec3(-12.0, 10.3, -8.5),
+    glm::vec3(-10.6, 10.3, -13.5),
+    glm::vec3(-8.6, 10.3, -18.5),
+
+    glm::vec3(-14.0, 10.1, -8.5),
+    glm::vec3(-13.0, 10.1, -13.5),
+    glm::vec3(-11.5, 10.1, -18.5),
+
+    glm::vec3(-16.5, 9.9, -8.5),
+    glm::vec3(-15.5, 9.9, -13.5),
+    glm::vec3(-14.3, 9.9, -18.5),
+
+    glm::vec3(-19.0, 9.7, -8.5),
+    glm::vec3(-18.2, 9.7, -13.5),
+    glm::vec3(-17.0, 9.7, -18.5),
+
+
+    // left lights
+    glm::vec3(-7.2, 10.7, 8.5),
+    glm::vec3(-5.2, 10.7, 13.5),
+    glm::vec3(-3.2, 10.7, 18.5),
+
+
+    glm::vec3(-9.6, 10.5, 8.5),
+    glm::vec3(-7.9, 10.5, 13.5),
+    glm::vec3(-5.9, 10.5, 18.5),
+
+    glm::vec3(-12.0, 10.3, 8.5),
+    glm::vec3(-10.6, 10.3, 13.5),
+    glm::vec3(-8.6, 10.3, 18.5),
+
+    glm::vec3(-14.0, 10.1, 8.5),
+    glm::vec3(-13.0, 10.1, 13.5),
+    glm::vec3(-11.5, 10.1, 18.5),
+
+    glm::vec3(-16.5, 9.9, 8.5),
+    glm::vec3(-15.5, 9.9, 13.5),
+    glm::vec3(-14.3, 9.9, 18.5),
+
+    glm::vec3(-19.0, 9.7, 8.5),
+    glm::vec3(-18.2, 9.7, 13.5),
+    glm::vec3(-17.0, 9.7, 18.5),
+
+
 
 
 
     
 };
+
+
 
 PointLight pointlight1(
 
@@ -183,12 +242,12 @@ PointLight pointlight4(
     4       // light number
 );
 
-PointLight pointlight5(
 
+PointLight pointlight5(
     pointLightPositions[4].x, pointLightPositions[4].y, pointLightPositions[4].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -196,11 +255,10 @@ PointLight pointlight5(
 );
 
 PointLight pointlight6(
-
     pointLightPositions[5].x, pointLightPositions[5].y, pointLightPositions[5].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -208,11 +266,10 @@ PointLight pointlight6(
 );
 
 PointLight pointlight7(
-
     pointLightPositions[6].x, pointLightPositions[6].y, pointLightPositions[6].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -220,11 +277,10 @@ PointLight pointlight7(
 );
 
 PointLight pointlight8(
-
     pointLightPositions[7].x, pointLightPositions[7].y, pointLightPositions[7].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -232,11 +288,10 @@ PointLight pointlight8(
 );
 
 PointLight pointlight9(
-
     pointLightPositions[8].x, pointLightPositions[8].y, pointLightPositions[8].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -244,11 +299,10 @@ PointLight pointlight9(
 );
 
 PointLight pointlight10(
-
     pointLightPositions[9].x, pointLightPositions[9].y, pointLightPositions[9].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -256,11 +310,10 @@ PointLight pointlight10(
 );
 
 PointLight pointlight11(
-
     pointLightPositions[10].x, pointLightPositions[10].y, pointLightPositions[10].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -268,11 +321,10 @@ PointLight pointlight11(
 );
 
 PointLight pointlight12(
-
     pointLightPositions[11].x, pointLightPositions[11].y, pointLightPositions[11].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -280,11 +332,10 @@ PointLight pointlight12(
 );
 
 PointLight pointlight13(
-
     pointLightPositions[12].x, pointLightPositions[12].y, pointLightPositions[12].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -292,11 +343,10 @@ PointLight pointlight13(
 );
 
 PointLight pointlight14(
-
     pointLightPositions[13].x, pointLightPositions[13].y, pointLightPositions[13].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -304,11 +354,10 @@ PointLight pointlight14(
 );
 
 PointLight pointlight15(
-
     pointLightPositions[14].x, pointLightPositions[14].y, pointLightPositions[14].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -316,11 +365,10 @@ PointLight pointlight15(
 );
 
 PointLight pointlight16(
-
     pointLightPositions[15].x, pointLightPositions[15].y, pointLightPositions[15].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -328,11 +376,10 @@ PointLight pointlight16(
 );
 
 PointLight pointlight17(
-
     pointLightPositions[16].x, pointLightPositions[16].y, pointLightPositions[16].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -340,11 +387,10 @@ PointLight pointlight17(
 );
 
 PointLight pointlight18(
-
     pointLightPositions[17].x, pointLightPositions[17].y, pointLightPositions[17].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -352,11 +398,10 @@ PointLight pointlight18(
 );
 
 PointLight pointlight19(
-
     pointLightPositions[18].x, pointLightPositions[18].y, pointLightPositions[18].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -364,11 +409,10 @@ PointLight pointlight19(
 );
 
 PointLight pointlight20(
-
     pointLightPositions[19].x, pointLightPositions[19].y, pointLightPositions[19].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -376,11 +420,10 @@ PointLight pointlight20(
 );
 
 PointLight pointlight21(
-
     pointLightPositions[20].x, pointLightPositions[20].y, pointLightPositions[20].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
@@ -388,17 +431,422 @@ PointLight pointlight21(
 );
 
 PointLight pointlight22(
-
     pointLightPositions[21].x, pointLightPositions[21].y, pointLightPositions[21].z,  // position
     0.05f, 0.05f, 0.05f,     // ambient
-    0.8f, 0.8f, 0.8f,     // diffuse
-    1.0f, 1.0f, 1.0f,        // specular
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
     1.0f,   //k_c
     0.09f,  //k_l
     0.032f, //k_q
     22       // light number
 );
 
+PointLight pointlight23(
+    pointLightPositions[22].x, pointLightPositions[22].y, pointLightPositions[22].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    23       // light number
+);
+
+PointLight pointlight24(
+    pointLightPositions[23].x, pointLightPositions[23].y, pointLightPositions[23].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    24       // light number
+);
+
+PointLight pointlight25(
+    pointLightPositions[24].x, pointLightPositions[24].y, pointLightPositions[24].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    25       // light number
+);
+
+PointLight pointlight26(
+    pointLightPositions[25].x, pointLightPositions[25].y, pointLightPositions[25].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    26       // light number
+);
+
+PointLight pointlight27(
+    pointLightPositions[26].x, pointLightPositions[26].y, pointLightPositions[26].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    27       // light number
+);
+
+PointLight pointlight28(
+    pointLightPositions[27].x, pointLightPositions[27].y, pointLightPositions[27].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    28       // light number
+);
+
+PointLight pointlight29(
+    pointLightPositions[28].x, pointLightPositions[28].y, pointLightPositions[28].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    29       // light number
+);
+
+PointLight pointlight30(
+
+    pointLightPositions[29].x, pointLightPositions[29].y, pointLightPositions[29].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    30       // light number
+);
+
+PointLight pointlight31(
+
+    pointLightPositions[30].x, pointLightPositions[30].y, pointLightPositions[30].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    31       // light number
+);
+
+PointLight pointlight32(
+
+    pointLightPositions[31].x, pointLightPositions[31].y, pointLightPositions[31].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    32       // light number
+);
+
+PointLight pointlight33(
+
+    pointLightPositions[32].x, pointLightPositions[32].y, pointLightPositions[32].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    33       // light number
+);
+
+PointLight pointlight34(
+
+    pointLightPositions[33].x, pointLightPositions[33].y, pointLightPositions[33].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    34       // light number
+);
+
+PointLight pointlight35(
+
+    pointLightPositions[34].x, pointLightPositions[34].y, pointLightPositions[34].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    35       // light number
+);
+
+PointLight pointlight36(
+
+    pointLightPositions[35].x, pointLightPositions[35].y, pointLightPositions[35].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    36       // light number
+);
+
+PointLight pointlight37(
+
+    pointLightPositions[36].x, pointLightPositions[36].y, pointLightPositions[36].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    37       // light number
+);
+
+PointLight pointlight38(
+
+    pointLightPositions[37].x, pointLightPositions[37].y, pointLightPositions[37].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    38       // light number
+);
+
+PointLight pointlight39(
+
+    pointLightPositions[38].x, pointLightPositions[38].y, pointLightPositions[38].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    39      // light number
+);
+
+PointLight pointlight40(
+
+    pointLightPositions[39].x, pointLightPositions[39].y, pointLightPositions[39].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    40       // light number
+);
+
+PointLight pointlight41(
+    pointLightPositions[40].x, pointLightPositions[40].y, pointLightPositions[40].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    41       // light number
+);
+
+PointLight pointlight42(
+    pointLightPositions[41].x, pointLightPositions[41].y, pointLightPositions[41].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    42       // light number
+);
+
+PointLight pointlight43(
+    pointLightPositions[42].x, pointLightPositions[42].y, pointLightPositions[42].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    43       // light number
+);
+
+PointLight pointlight44(
+    pointLightPositions[43].x, pointLightPositions[43].y, pointLightPositions[43].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    44       // light number
+);
+
+PointLight pointlight45(
+    pointLightPositions[44].x, pointLightPositions[44].y, pointLightPositions[44].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    45       // light number
+);
+
+PointLight pointlight46(
+    pointLightPositions[45].x, pointLightPositions[45].y, pointLightPositions[45].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    46       // light number
+);
+
+PointLight pointlight47(
+    pointLightPositions[46].x, pointLightPositions[46].y, pointLightPositions[46].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    47       // light number
+);
+
+PointLight pointlight48(
+    pointLightPositions[47].x, pointLightPositions[47].y, pointLightPositions[47].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    48       // light number
+);
+
+PointLight pointlight49(
+    pointLightPositions[48].x, pointLightPositions[48].y, pointLightPositions[48].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    49       // light number
+);
+
+PointLight pointlight50(
+    pointLightPositions[49].x, pointLightPositions[49].y, pointLightPositions[49].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    50       // light number
+);
+
+PointLight pointlight51(
+    pointLightPositions[50].x, pointLightPositions[50].y, pointLightPositions[50].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    51       // light number
+);
+
+PointLight pointlight52(
+    pointLightPositions[51].x, pointLightPositions[51].y, pointLightPositions[51].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    52       // light number
+);
+
+PointLight pointlight53(
+    pointLightPositions[52].x, pointLightPositions[52].y, pointLightPositions[52].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    53       // light number
+);
+
+PointLight pointlight54(
+    pointLightPositions[53].x, pointLightPositions[53].y, pointLightPositions[53].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    54       // light number
+);
+
+PointLight pointlight55(
+    pointLightPositions[54].x, pointLightPositions[54].y, pointLightPositions[54].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    55       // light number
+);
+
+PointLight pointlight56(
+    pointLightPositions[55].x, pointLightPositions[55].y, pointLightPositions[55].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    56       // light number
+);
+
+PointLight pointlight57(
+    pointLightPositions[56].x, pointLightPositions[56].y, pointLightPositions[56].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    57       // light number
+);
+
+PointLight pointlight58(
+    pointLightPositions[57].x, pointLightPositions[57].y, pointLightPositions[57].z,  // position
+    0.05f, 0.05f, 0.05f,     // ambient
+    0.2f, 0.2f, 0.2f,     // diffuse
+    0.2f, 0.2f, 0.2f,        // specular
+    1.0f,   //k_c
+    0.09f,  //k_l
+    0.032f, //k_q
+    58       // light number
+);
 
 glm::vec3 spotPositions[] = {
     glm::vec3(5.0f, 3.0f, 0.5f),
@@ -447,6 +895,8 @@ SpotLight spotlight3(
     glm::cos(glm::radians(25.5f)),
     0.5, 1, 0
 );
+
+
 
 
 
@@ -862,6 +1312,44 @@ int main()
         pointlight20.setUpPointLight(lightingShader);
         pointlight21.setUpPointLight(lightingShader);
         pointlight22.setUpPointLight(lightingShader);
+        pointlight23.setUpPointLight(lightingShader);
+        pointlight24.setUpPointLight(lightingShader);
+        pointlight25.setUpPointLight(lightingShader);
+        pointlight26.setUpPointLight(lightingShader);
+        pointlight27.setUpPointLight(lightingShader);
+        pointlight28.setUpPointLight(lightingShader);
+        pointlight29.setUpPointLight(lightingShader);
+        pointlight30.setUpPointLight(lightingShader);
+        pointlight31.setUpPointLight(lightingShader);
+        pointlight32.setUpPointLight(lightingShader);
+        pointlight33.setUpPointLight(lightingShader);
+        pointlight34.setUpPointLight(lightingShader);
+        pointlight35.setUpPointLight(lightingShader);
+        pointlight36.setUpPointLight(lightingShader);
+        pointlight37.setUpPointLight(lightingShader);
+        pointlight38.setUpPointLight(lightingShader);
+        pointlight39.setUpPointLight(lightingShader);
+        pointlight40.setUpPointLight(lightingShader);
+        pointlight41.setUpPointLight(lightingShader);
+        pointlight42.setUpPointLight(lightingShader);
+        pointlight43.setUpPointLight(lightingShader);
+        pointlight44.setUpPointLight(lightingShader);
+        pointlight45.setUpPointLight(lightingShader);
+        pointlight46.setUpPointLight(lightingShader);
+        pointlight47.setUpPointLight(lightingShader);
+        pointlight48.setUpPointLight(lightingShader);
+        pointlight49.setUpPointLight(lightingShader);
+        pointlight50.setUpPointLight(lightingShader);
+        pointlight51.setUpPointLight(lightingShader);
+        pointlight52.setUpPointLight(lightingShader);
+        pointlight53.setUpPointLight(lightingShader);
+        pointlight54.setUpPointLight(lightingShader);
+        pointlight55.setUpPointLight(lightingShader);
+        pointlight56.setUpPointLight(lightingShader);
+        pointlight57.setUpPointLight(lightingShader);
+        pointlight58.setUpPointLight(lightingShader);
+
+
 
         spotlight1.setUpspotLight(lightingShader);
         spotlight2.setUpspotLight(lightingShader);
@@ -918,6 +1406,44 @@ int main()
         pointlight20.setUpPointLight(lightingShaderWithTexture);
         pointlight21.setUpPointLight(lightingShaderWithTexture);
         pointlight22.setUpPointLight(lightingShaderWithTexture);
+        pointlight23.setUpPointLight(lightingShaderWithTexture);
+        pointlight24.setUpPointLight(lightingShaderWithTexture);
+        pointlight25.setUpPointLight(lightingShaderWithTexture);
+        pointlight26.setUpPointLight(lightingShaderWithTexture);
+        pointlight27.setUpPointLight(lightingShaderWithTexture);
+        pointlight28.setUpPointLight(lightingShaderWithTexture);
+        pointlight29.setUpPointLight(lightingShaderWithTexture);
+        pointlight30.setUpPointLight(lightingShaderWithTexture);
+        pointlight31.setUpPointLight(lightingShaderWithTexture);
+        pointlight32.setUpPointLight(lightingShaderWithTexture);
+        pointlight33.setUpPointLight(lightingShaderWithTexture);
+        pointlight34.setUpPointLight(lightingShaderWithTexture);
+        pointlight35.setUpPointLight(lightingShaderWithTexture);
+        pointlight36.setUpPointLight(lightingShaderWithTexture);
+        pointlight37.setUpPointLight(lightingShaderWithTexture);
+        pointlight38.setUpPointLight(lightingShaderWithTexture);
+        pointlight39.setUpPointLight(lightingShaderWithTexture);
+        pointlight40.setUpPointLight(lightingShaderWithTexture);
+        pointlight41.setUpPointLight(lightingShaderWithTexture);
+        pointlight42.setUpPointLight(lightingShaderWithTexture);
+        pointlight43.setUpPointLight(lightingShaderWithTexture);
+        pointlight44.setUpPointLight(lightingShaderWithTexture);
+        pointlight45.setUpPointLight(lightingShaderWithTexture);
+        pointlight46.setUpPointLight(lightingShaderWithTexture);
+        pointlight47.setUpPointLight(lightingShaderWithTexture);
+        pointlight48.setUpPointLight(lightingShaderWithTexture);
+        pointlight49.setUpPointLight(lightingShaderWithTexture);
+        pointlight50.setUpPointLight(lightingShaderWithTexture);
+        pointlight51.setUpPointLight(lightingShaderWithTexture);
+        pointlight52.setUpPointLight(lightingShaderWithTexture);
+        pointlight53.setUpPointLight(lightingShaderWithTexture);
+        pointlight54.setUpPointLight(lightingShaderWithTexture);
+        pointlight55.setUpPointLight(lightingShaderWithTexture);
+        pointlight56.setUpPointLight(lightingShaderWithTexture);
+        pointlight57.setUpPointLight(lightingShaderWithTexture);
+        pointlight58.setUpPointLight(lightingShaderWithTexture);
+
+
 
         spotlight1.setUpspotLight(lightingShaderWithTexture);
         spotlight2.setUpspotLight(lightingShaderWithTexture);
@@ -1630,7 +2156,7 @@ int main()
 
         // we now draw as many light bulbs as we have point lights.
         glBindVertexArray(lightCubeVAO);
-        for (unsigned int i = 0; i < 22; i++)
+        for (unsigned int i = 0; i < 58; i++)
         {
             model = glm::mat4(1.0f);
             model = glm::translate(model, pointLightPositions[i]);
@@ -2402,25 +2928,41 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     //    }
     //}
 
+    // First, declare the array of point lights at the top with your other variables
+    PointLight* pointLights[] = {
+    &pointlight1, &pointlight2, &pointlight3, &pointlight4, &pointlight5,
+    &pointlight6, &pointlight7, &pointlight8, &pointlight9, &pointlight10,
+    &pointlight11, &pointlight12, &pointlight13, &pointlight14, &pointlight15,
+    &pointlight16, &pointlight17, &pointlight18, &pointlight19, &pointlight20,
+    &pointlight21, &pointlight22, &pointlight23, &pointlight24, &pointlight25,
+    &pointlight26, &pointlight27, &pointlight28, &pointlight29, &pointlight30,
+    &pointlight31, &pointlight32, &pointlight33, &pointlight34, &pointlight35,
+    &pointlight36, &pointlight37, &pointlight38, &pointlight39, &pointlight40,
+    &pointlight41, &pointlight42, &pointlight43, &pointlight44, &pointlight45,
+    &pointlight46, &pointlight47, &pointlight48, &pointlight49, &pointlight50,
+    &pointlight51, &pointlight52, &pointlight53, &pointlight54, &pointlight55,
+    &pointlight56, &pointlight57, &pointlight58
+    };
+    const int numLights = 58;  // Updated number of point lights
+
+    // In your key callback function:
     if (key == GLFW_KEY_2 && action == GLFW_PRESS)
     {
-        if (pointLightOn)
+        for (int i = 0; i < numLights; i++)
         {
-            pointlight1.turnOff();
-            pointlight2.turnOff();
-            pointlight3.turnOff();
-            pointlight4.turnOff();
-            pointLightOn = !pointLightOn;
+            if (pointLightOn)
+            {
+                pointLights[i]->turnOff();
+            }
+            else
+            {
+                pointLights[i]->turnOn();
+            }
         }
-        else
-        {
-            pointlight1.turnOn();
-            pointlight2.turnOn();
-            pointlight3.turnOn();
-            pointlight4.turnOn();
-            pointLightOn = !pointLightOn;
-        }
+        pointLightOn = !pointLightOn;
     }
+
+
     if (key == GLFW_KEY_1 && action == GLFW_PRESS)
     {
         directionalLightOn = !directionalLightOn;

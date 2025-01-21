@@ -42,7 +42,7 @@ vec3 specular;
 bool on;
 };
 
-#define NR_POINT_LIGHTS 22
+#define NR_POINT_LIGHTS 58
 #define NR_SPOT_LIGHTS 3
 
 in vec3 FragPos;
