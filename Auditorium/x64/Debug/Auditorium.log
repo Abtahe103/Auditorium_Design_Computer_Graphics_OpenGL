@@ -20,6 +20,9 @@ D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\fractal.h(55,51): warning 
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\cylinder.h(132,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'main.cpp')
   
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\cylinder.h(372,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(111,37): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'main.cpp')
   
@@ -38,25 +41,33 @@ D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(132,23): war
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(133,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'main.cpp')
   
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(986,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(986,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(987,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(987,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(988,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(988,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(989,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(989,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(990,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(990,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(991,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(991,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(992,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(993,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(993,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(994,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(994,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(995,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(995,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(365,37): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(365,28): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(366,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(380,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(381,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(388,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(390,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(393,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\BezierCurve.h(394,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(996,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(996,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(997,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
@@ -65,44 +76,98 @@ D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(998,5): warning C
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(998,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(999,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(999,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1000,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1000,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1001,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1001,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1002,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
 D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1002,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2263,56): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2263,51): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2263,46): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2311,60): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2311,53): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2311,46): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2317,60): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2317,53): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2317,46): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2353,64): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2353,57): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2353,50): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2359,64): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2359,57): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2359,50): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2376,60): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2376,53): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2376,46): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2383,60): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2383,53): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2383,46): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2401,60): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2401,53): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2401,46): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2408,60): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2408,53): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2408,46): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2426,60): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2426,53): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2426,46): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2433,60): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2433,53): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2433,46): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2739,44): warning C4305: '-=': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2740,49): warning C4305: '-=': truncation from 'double' to 'float'
-D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2741,31): warning C4305: '-=': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1003,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1003,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1004,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1004,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1005,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1005,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1006,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1006,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1007,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1007,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1008,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1008,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1009,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1009,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1011,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1011,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1012,5): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1012,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1017,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1017,15): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1018,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1018,15): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1019,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1019,15): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1020,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1020,15): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1021,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1021,15): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1022,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1022,15): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1023,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1024,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1025,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1025,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1026,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1026,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1027,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1028,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1028,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1029,9): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(1029,14): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2323,56): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2323,51): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2323,46): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2371,60): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2371,53): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2371,46): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2377,60): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2377,53): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2377,46): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2426,64): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2426,57): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2426,50): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2432,64): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2432,57): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2432,50): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2465,60): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2465,53): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2465,46): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2472,60): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2472,53): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2472,46): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2490,60): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2490,53): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2490,46): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2497,60): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2497,53): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2497,46): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2515,60): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2515,53): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2515,46): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2522,60): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2522,53): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2522,46): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2824,60): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2824,55): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2824,50): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2832,60): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2832,55): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2832,50): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2838,56): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2838,51): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2838,46): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2844,56): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2844,51): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2844,46): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2922,44): warning C4305: '-=': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2923,49): warning C4305: '-=': truncation from 'double' to 'float'
+D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\main.cpp(2924,31): warning C4305: '-=': truncation from 'double' to 'float'
   Auditorium.vcxproj -> D:\4-2 KUET\CSE 4208\Assignment\Auditorium\Auditorium\x64\Debug\Auditorium.exe

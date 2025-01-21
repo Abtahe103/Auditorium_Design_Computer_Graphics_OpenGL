@@ -40,7 +40,15 @@ void rightWall(unsigned int& cubeVAO, Shader& lightingShader);
 void ambienton_off(Shader& lightingShader);
 void diffuse_on_off(Shader& lightingShader);
 void specular_on_off(Shader& lightingShader);
+void drawCar(Shader& lightingShader, unsigned int& cubeVAO, unsigned int& triangleVAO);
 unsigned int loadTexture(char const* path, GLenum textureWrappingModeS, GLenum textureWrappingModeT, GLenum textureFilteringModeMin, GLenum textureFilteringModeMax);
+
+
+
+glm::vec3 carPosition = glm::vec3(0.0f, 0.0f, 0.0f); // Initial car position
+float carRotation = 0.0f; // Rotation angle in degrees
+
+
 
 float left = -5.0f;
 float right = 5.0f;
@@ -74,6 +82,7 @@ double lastKeyPressTime = 0.0;
 const double keyPressDelay = 0.2; // delay in seconds
 
 // modelling transform
+float rotationAngle = 0.0f;
 float rotateAngle_X = 0.0;
 float rotateAngle_Y = 0.0;
 float rotateAngle_Z = 0.0;
@@ -103,7 +112,7 @@ BasicCamera basic_camera(eyeX, eyeY, eyeZ, lookAtX, lookAtY, lookAtZ, V);
 glm::vec3 pointLightPositions[] = {
     
     glm::vec3(-30.50f, 2.50f,  25.5f),
-    glm::vec3(-10.50f, 2.50f,  20.5f),
+    glm::vec3(-30.50f, 2.50f,  -25.5f),
     glm::vec3(4.50f,  2.50f,  1.5f),
     glm::vec3(4.50f,  2.50f,  -1.5f),
 
@@ -912,6 +921,7 @@ bool SpecularON = true;
 bool ambientToggle = true;
 bool diffuseToggle = true;
 bool specularToggle = true;
+bool isRotating = false;
 
 
 // timing
@@ -1002,6 +1012,23 @@ int main()
     -1.4000, 0.4500, 1.0
     };
 
+
+    GLfloat sculp_points[] = {
+        -0.3, -1.8, 1.0,
+        -0.8, -1.6, 1.0,
+        -0.9, -1.2, 1.0,
+        -0.8, -0.8, 1.0,
+        -0.7, -0.4, 1.0,
+        -0.2, -0.2, 1.0,
+        0.0, -0.1, 1.0,
+        0.2, 0.0, 1.0,
+        0.7, 0.2, 1.0,
+        0.8, 0.6, 1.0,
+        0.9, 1.0, 1.0,
+        0.8, 1.4, 1.0,
+        0.3, 1.8, 1.0
+    };
+
     
 
 
@@ -1016,6 +1043,7 @@ int main()
     string wall_texture_path = "Images/wall_texture.jpg";
     string stage_texture_path = "Images/stage_texture.jpg";
     string curtain_texture_path = "Images/curtain_texture.jpg";
+    string roof_texture_path = "Images/roof_texture.jpg";
 
     /*unsigned int diffMap = loadTexture(diffuseMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     unsigned int specMap = loadTexture(specularMapPath.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);*/
@@ -1027,16 +1055,22 @@ int main()
     unsigned int grass = loadTexture(grass_path.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     unsigned int wall_texture = loadTexture(wall_texture_path.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     unsigned int stage_texture = loadTexture(stage_texture_path.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+    unsigned int roof_texture = loadTexture(roof_texture_path.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
     unsigned int curtain_texture = loadTexture(curtain_texture_path.c_str(), GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
 
     //unsigned int laughEmojiv2 = loadTexture(laughEmoPath.c_str(), GL_REPEAT, GL_MIRRORED_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
 
     Cube cube = Cube(bitfest, bitfest, 32.0f, 0.0f, 0.0f, 1.0f, 1.0f);
-    Cube floor_tiles_cube = Cube(floor_tiles, floor_tiles, 32.0f, 0.0f, 0.0f, 20.0f, 20.0f);
+    Cube floor_tiles_cube = Cube(floor_tiles, floor_tiles, 32.0f, 0.0f, 0.0f, 5.0f, 5.0f);
     Cube stage_design = Cube(stage_texture, stage_texture, 32.0f, 0.0f, 0.0f, 1.0f, 1.0f);
     Cube curtain_design = Cube(curtain_texture, curtain_texture, 10.0f, 0.0f, 0.0f, 1.0f, 10.0f);
     Cube2 floor_tiles_steps = Cube2(floor_tiles, floor_tiles, 32.0f, 0.0f, 0.0f, 20.0f, 20.0f);
     Cube2 wall_tex = Cube2(wall_texture, wall_texture, 32.0f, 0.0f, 0.0f, 10.0f, 10.0f);
+
+    Roof center_roof = Roof(roof_texture, roof_texture, 32.0f, 0.0f, 0.0f, 1.0f, 10.0f);
+    Angular_roof right_roof = Angular_roof(roof_texture, roof_texture, 32.0f, 0.0f, 0.0f, 1.0f, 10.0f);
+    Angular_roof left_roof = Angular_roof(roof_texture, roof_texture, 32.0f, 0.0f, 0.0f, 1.0f, 10.0f);
+
     CubicCurvedWallTex curve_wall_right = CubicCurvedWallTex();
     CubicCurvedWallTex curve_wall_left = CubicCurvedWallTex();
 
@@ -1049,6 +1083,10 @@ int main()
     Cylinder treepot_grass = Cylinder(0.8f);
 
     BezierCurve roof_design = BezierCurve(roof_points, 16 * 3, wall_texture);
+
+    BezierSculpt sculpure_design = BezierSculpt(sculp_points, 13 * 3, laughEmoji);
+
+    
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -1144,10 +1182,10 @@ int main()
         0.0f, 0.0f, 1.0f, 0.0f, -1.0f, 0.0f,
 
         //diagonal
-        0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,     // 4 - 2
-        0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f,     // |   |     diagonal / from top
-        1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,     // 3 - 1
-        1.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+        0.0f, 0.0f, 1.0f, -1.0f, 0.0f, -1.0f,     // 4 - 2
+        0.0f, 1.0f, 1.0f, -1.0f, 0.0f, -1.0f,     // |   |     diagonal / from top
+        1.0f, 0.0f, 0.0f, -1.0f, 0.0f, -1.0f,     // 3 - 1
+        1.0f, 1.0f, 0.0f, -1.0f, 0.0f, -1.0f,
 
     };
 
@@ -1450,7 +1488,7 @@ int main()
         spotlight3.setUpspotLight(lightingShaderWithTexture);
 
 
-        lightingShaderWithTexture.setVec3("directionalLight.direction", 0.0f, -1.0f, 0.0f);
+        lightingShaderWithTexture.setVec3("directionalLight.direction", 0.0f, -1.0f, -0.8f);
         lightingShaderWithTexture.setVec3("directionalLight.ambient", .2f, .2f, .2f);
         lightingShaderWithTexture.setVec3("directionalLight.diffuse", .8f, .8f, .8f);
         lightingShaderWithTexture.setVec3("directionalLight.specular", 1.0f, 1.0f, 1.0f);
@@ -1681,37 +1719,39 @@ int main()
         scale = glm::scale(identityMatrix, glm::vec3(16.6, 0.2, 15.0));
         translate = glm::translate(identityMatrix, glm::vec3(-14.7, 11.0, 0.0));
         model = translate * scale;
-        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+        center_roof.drawRoofWithTexture(lightingShaderWithTexture, model);
+
+
 
         //center 2nd step
         scale = glm::scale(identityMatrix, glm::vec3(14.4, 0.2, 15.0));
         translate = glm::translate(identityMatrix, glm::vec3(-15.8, 10.8, 0.0));
         model = translate * scale;
-        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+        center_roof.drawRoofWithTexture(lightingShaderWithTexture, model);
 
         //center 3rd step
         scale = glm::scale(identityMatrix, glm::vec3(12.2, 0.2, 15.0));
         translate = glm::translate(identityMatrix, glm::vec3(-16.9, 10.6, 0.0));
         model = translate * scale;
-        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+        center_roof.drawRoofWithTexture(lightingShaderWithTexture, model);
 
         //center 4th step
         scale = glm::scale(identityMatrix, glm::vec3(10.0, 0.2, 15.0));
         translate = glm::translate(identityMatrix, glm::vec3(-18.0, 10.4, 0.0));
         model = translate * scale;
-        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+        center_roof.drawRoofWithTexture(lightingShaderWithTexture, model);
 
         //center 5th step
         scale = glm::scale(identityMatrix, glm::vec3(7.8, 0.2, 15.0));
         translate = glm::translate(identityMatrix, glm::vec3(-19.1, 10.2, 0.0));
         model = translate * scale;
-        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+        center_roof.drawRoofWithTexture(lightingShaderWithTexture, model);
 
         //center 6th step
         scale = glm::scale(identityMatrix, glm::vec3(5.6, 0.2, 15.0));
         translate = glm::translate(identityMatrix, glm::vec3(-20.2, 10.0, 0.0));
         model = translate * scale;
-        floor_tiles_cube.drawCubeWithTexture(lightingShaderWithTexture, model);
+        center_roof.drawRoofWithTexture(lightingShaderWithTexture, model);
 
 
 
@@ -1721,42 +1761,42 @@ int main()
         translate = glm::translate(identityMatrix, glm::vec3(-11.94, 11.0, -13.75));
         /*rotation = glm::rotate(identityMatrix, glm::radians(30.0f), glm::vec3(0.0f, 1.0f, 0.0f));*/
         model = translate * scale;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        right_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
         //right angular 2nd step
         scale = glm::scale(identityMatrix, glm::vec3(19.2, 0.2, 12.5));
         translate = glm::translate(identityMatrix, glm::vec3(-13.40, 10.8, -13.75));
 
         model = translate * scale;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        right_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
         //right angular 3rd step
         scale = glm::scale(identityMatrix, glm::vec3(16.27, 0.2, 12.5));
         translate = glm::translate(identityMatrix, glm::vec3(-14.87, 10.6, -13.75));
 
         model = translate * scale;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        right_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
         //right angular 4th step
         scale = glm::scale(identityMatrix, glm::vec3(13.34, 0.2, 12.5));
         translate = glm::translate(identityMatrix, glm::vec3(-16.34, 10.4, -13.75));
 
         model = translate * scale;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        right_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
         //right angular 5th step
         scale = glm::scale(identityMatrix, glm::vec3(10.41, 0.2, 12.5));
         translate = glm::translate(identityMatrix, glm::vec3(-17.805, 10.2, -13.75));
 
         model = translate * scale;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        right_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
         //right angular 6th step
         scale = glm::scale(identityMatrix, glm::vec3(7.48, 0.2, 12.5));
         translate = glm::translate(identityMatrix, glm::vec3(-19.27, 10.0, -13.75));
 
         model = translate * scale;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        right_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
 
 
@@ -1767,42 +1807,42 @@ int main()
         translate = glm::translate(identityMatrix, glm::vec3(-11.92, 11.0, 13.75));
         rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
         model = translate * scale * rotation;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        left_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
         //left angular 2nd step
         scale = glm::scale(identityMatrix, glm::vec3(19.2, 0.2, 12.5));
         translate = glm::translate(identityMatrix, glm::vec3(-13.39, 10.8, 13.75));
         rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
         model = translate * scale * rotation;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        left_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
         //left angular 3rd step
         scale = glm::scale(identityMatrix, glm::vec3(16.27, 0.2, 12.5));
         translate = glm::translate(identityMatrix, glm::vec3(-14.86, 10.6, 13.75));
         rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
         model = translate * scale * rotation;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        left_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
         //left angular 4th step
         scale = glm::scale(identityMatrix, glm::vec3(13.34, 0.2, 12.5));
         translate = glm::translate(identityMatrix, glm::vec3(-16.33, 10.4, 13.75));
         rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
         model = translate * scale * rotation;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        left_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
         //left angular 5th step
         scale = glm::scale(identityMatrix, glm::vec3(10.41, 0.2, 12.5));
         translate = glm::translate(identityMatrix, glm::vec3(-17.80, 10.2, 13.75));
         rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
         model = translate * scale * rotation;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        left_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
         //left angular 6th step
         scale = glm::scale(identityMatrix, glm::vec3(7.48, 0.2, 12.5));
         translate = glm::translate(identityMatrix, glm::vec3(-19.27, 10.0, 13.75));
         rotation = glm::rotate(identityMatrix, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
         model = translate * scale * rotation;
-        floor_tiles_steps.drawCubeWithTexture(lightingShaderWithTexture, model);
+        left_roof.drawCubeWithTexture(lightingShaderWithTexture, model);
 
 
 
@@ -2132,7 +2172,27 @@ int main()
 
 
 
+        /// Sculpture draw
 
+        if (isRotating) {
+            rotationAngle += 1.0f;  // Adjust this value to control rotation speed
+            if (rotationAngle >= 360.0f) {
+                rotationAngle -= 360.0f;  // Reset to prevent overflow
+            }
+        }
+
+        translateMatrix = glm::translate(identityMatrix, glm::vec3(-10.0f, 2.0f, 40.0f));
+        rotation = glm::rotate(identityMatrix, glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
+        scaleMatrix = glm::scale(identityMatrix, glm::vec3(2.0f, 1.0f, 2.0f));
+        model = translateMatrix * rotation * scaleMatrix;
+
+        sculpure_design.drawBezierSculpt(lightingShaderWithTexture, model);
+
+
+        ///******************* draw car****************////
+
+        drawCar(lightingShader, cubeVAO, triangleVAO);
+        
 
 
         //glBindVertexArray(cubeVAO);
@@ -2316,6 +2376,19 @@ void frontWall(unsigned int& cubeVAO, Shader& lightingShader)
     model = translate * scale;
     drawCube(cubeVAO, lightingShader, model, 0.112, 0.167, 0.231, 32.0);
 
+
+    ///*******car*********////
+    /*scale = glm::scale(identityMatrix, glm::vec3(5.0, 1.0, 4.0));
+    translate = glm::translate(identityMatrix, glm::vec3(-43.0, 0.0+1.0, 2.0));
+    model = translate * scale;
+    drawCube(cubeVAO, lightingShader, model, 0.9, 0.1, 0.1, 32.0);
+
+
+    scale = glm::scale(identityMatrix, glm::vec3(5.0, 1.5, 14.0));
+    translate = glm::translate(identityMatrix, glm::vec3(-43.0, -1.5+1.0, -2.5));
+    model = translate * scale;
+    drawCube(cubeVAO, lightingShader, model, 0.9, 0.1, 0.1, 32.0);*/
+
     /*scale = glm::scale(identityMatrix, glm::vec3(-1.0, 0.8, 10.0));
     translate = glm::translate(identityMatrix, glm::vec3(1.0, -0.8, -5.0));
     model = translate * scale;
@@ -2357,6 +2430,22 @@ void triangleStage(unsigned int& triangleVAO, Shader& lightingShader) {
     rotation = glm::rotate(identityMatrix, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
     model = translate * scale * rotation;
     drawCube(triangleVAO, lightingShader, model, 0.112, 0.167, 0.231, 32.0);
+
+
+    ///*******car********////
+    /*scale = glm::scale(identityMatrix, glm::vec3(1.0, 5.0, 2.0));
+    translate = glm::translate(identityMatrix, glm::vec3(-43.0, 1.0+1.0, 0.0));
+    rotation = glm::rotate(identityMatrix, glm::radians(-90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    model = translate * rotation * scale;
+    drawCube(triangleVAO, lightingShader, model, 0.9, 0.1, 0.1, 32.0);
+
+    scale = glm::scale(identityMatrix, glm::vec3(1.0, 5.0, 2.0));
+    translate = glm::translate(identityMatrix, glm::vec3(-38.0, 1.0+1.0, 8.0));
+    rotation = glm::rotate(identityMatrix, glm::radians(-90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    rotation = glm::rotate(rotation, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+    model = translate * rotation * scale;
+    drawCube(triangleVAO, lightingShader, model, 0.9, 0.1, 0.1, 32.0);*/
+
 }
 
 void chair_center(unsigned int& cubeVAO, Shader& lightingShader, glm::vec3 position) {
@@ -2716,8 +2805,102 @@ void axis(unsigned int& cubeVAO, Shader& lightingShader)
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
+
+
+void drawCar(Shader& lightingShader, unsigned int& cubeVAO, unsigned int& triangleVAO) {
+    // Create the car's overall transformation matrix
+    glm::mat4 carTransform = glm::mat4(1.0f);
+    carTransform = glm::translate(carTransform, carPosition);
+    carTransform = glm::rotate(carTransform, glm::radians(carRotation), glm::vec3(0.0f, 1.0f, 0.0f));
+
+    glm::mat4 identityMatrix = glm::mat4(1.0f);
+    glm::mat4 translate, rotation, scale, model;
+
+    // Front triangle
+    scale = glm::scale(identityMatrix, glm::vec3(1.0, 5.0, 2.0));
+    translate = glm::translate(identityMatrix, glm::vec3(-43.0, 1.0 + 1.0, 0.0));
+    rotation = glm::rotate(identityMatrix, glm::radians(-90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    model = carTransform * translate * rotation * scale;  // Apply carTransform here
+    drawCube(triangleVAO, lightingShader, model, 0.9, 0.1, 0.1, 32.0);
+
+    // Back triangle
+    scale = glm::scale(identityMatrix, glm::vec3(1.0, 5.0, 2.0));
+    translate = glm::translate(identityMatrix, glm::vec3(-38.0, 1.0 + 1.0, 8.0));
+    rotation = glm::rotate(identityMatrix, glm::radians(-90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    rotation = glm::rotate(rotation, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+    model = carTransform * translate * rotation * scale;  // Apply carTransform here
+    drawCube(triangleVAO, lightingShader, model, 0.9, 0.1, 0.1, 32.0);
+
+    // Upper body
+    scale = glm::scale(identityMatrix, glm::vec3(5.0, 1.0, 4.0));
+    translate = glm::translate(identityMatrix, glm::vec3(-43.0, 0.0 + 1.0, 2.0));
+    model = carTransform * translate * scale;  // Apply carTransform here
+    drawCube(cubeVAO, lightingShader, model, 0.9, 0.1, 0.1, 32.0);
+
+    // Lower body
+    scale = glm::scale(identityMatrix, glm::vec3(5.0, 1.5, 14.0));
+    translate = glm::translate(identityMatrix, glm::vec3(-43.0, -1.5 + 1.0, -2.5));
+    model = carTransform * translate * scale;  // Apply carTransform here
+    drawCube(cubeVAO, lightingShader, model, 0.9, 0.1, 0.1, 32.0);
+
+    // Create wheel object once
+    CylinderNoTex wheel = CylinderNoTex();
+
+    // Front left wheel
+    scale = glm::scale(identityMatrix, glm::vec3(0.8, 0.4, 0.8));
+    translate = glm::translate(identityMatrix, glm::vec3(-42.8, -0.5, 0.0));
+    rotation = glm::rotate(identityMatrix, glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    model = carTransform * translate * rotation * scale;  // Apply carTransform here
+    wheel.drawCylinderNoTex(lightingShader, model);
+
+    // Front right wheel
+    scale = glm::scale(identityMatrix, glm::vec3(0.8, 0.4, 0.8));
+    translate = glm::translate(identityMatrix, glm::vec3(-38.2, -0.5, 0.0));
+    rotation = glm::rotate(identityMatrix, glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    model = carTransform * translate * rotation * scale;  // Apply carTransform here
+    wheel.drawCylinderNoTex(lightingShader, model);
+
+    // Back left wheel
+    scale = glm::scale(identityMatrix, glm::vec3(0.8, 0.4, 0.8));
+    translate = glm::translate(identityMatrix, glm::vec3(-42.8, -0.5, 9.0));
+    rotation = glm::rotate(identityMatrix, glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    model = carTransform * translate * rotation * scale;  // Apply carTransform here
+    wheel.drawCylinderNoTex(lightingShader, model);
+
+    // Back right wheel
+    scale = glm::scale(identityMatrix, glm::vec3(0.8, 0.4, 0.8));
+    translate = glm::translate(identityMatrix, glm::vec3(-38.2, -0.5, 9.0));
+    rotation = glm::rotate(identityMatrix, glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    model = carTransform * translate * rotation * scale;  // Apply carTransform here
+    wheel.drawCylinderNoTex(lightingShader, model);
+}
+
+
 void processInput(GLFWwindow* window)
 {
+    float moveSpeed = 0.5f;
+    float rotateSpeed = 0.5f;
+
+    // Forward/Backward movement
+    if (glfwGetKey(window, GLFW_KEY_Z) == GLFW_PRESS) {
+        float radians = glm::radians(carRotation);
+        carPosition.x += moveSpeed * sin(radians);
+        carPosition.z += moveSpeed * cos(radians);
+    }
+    if (glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS) {
+        float radians = glm::radians(carRotation);
+        carPosition.x -= moveSpeed * sin(radians);
+        carPosition.z -= moveSpeed * cos(radians);
+    }
+
+    // Rotation
+    if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS) {
+        carRotation += rotateSpeed;
+    }
+    if (glfwGetKey(window, GLFW_KEY_V) == GLFW_PRESS) {
+        carRotation -= rotateSpeed;
+    }
+
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
@@ -2983,6 +3166,10 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
             spotlight3.turnOn();
             SpotLightOn = !SpotLightOn;
         }
+    }
+
+    if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) {
+        isRotating = !isRotating;  // Toggle rotation state
     }
 }
 
