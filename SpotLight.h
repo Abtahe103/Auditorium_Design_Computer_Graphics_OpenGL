@@ -1,56 +1,70 @@
-//
-//  spotLight.h
-//  test
-//
-//  Created by Nazirul Hasan on 21/9/23.
-//
-
 #ifndef spotLight_h
 #define spotLight_h
 
 #include <glad/glad.h>
 #include <glm/glm.hpp>
 #include "shader.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 class SpotLight {
 public:
     glm::vec3 position;
-    glm::vec3 direction;
     glm::vec3 ambient;
     glm::vec3 diffuse;
     glm::vec3 specular;
+    glm::vec3 direction;
     float k_c;
     float k_l;
     float k_q;
-    float cutOff;
-    float outerCuttOff;
-    SpotLight(float posX, float posY, float posZ, float dirX, float dirY, float dirZ, float ambR, float ambG, float ambB, float diffR, float diffG, float diffB, float specR, float specG, float specB, float constant, float linear, float quadratic, float cutoff, float outercuttoff) {
+    float inner_circle;
+    float outer_circle;
+    int Number;
+
+    SpotLight(float posX, float posY, float posZ, float ambR, float ambG, float ambB, float diffR, float diffG, float diffB, float specR, float specG, float specB, float constant, float linear, float quadratic, int num, float in_circle, float out_circle, float dirX, float dirY, float dirZ) {
 
         position = glm::vec3(posX, posY, posZ);
-        direction = glm::vec3(dirX, dirY, dirZ);
         ambient = glm::vec3(ambR, ambG, ambB);
         diffuse = glm::vec3(diffR, diffG, diffB);
         specular = glm::vec3(specR, specG, specB);
         k_c = constant;
         k_l = linear;
         k_q = quadratic;
-        cutOff = cutoff;
-        outerCuttOff = outercuttoff;
+        inner_circle = in_circle;
+        outer_circle = out_circle;
+        direction = glm::vec3(dirX, dirY, dirZ);
+        Number = num - 1;
     }
-    void setUpSpotLight(Shader& lightingShader)
+    SpotLight() {
+        position = glm::vec3(0, 0, 0);
+        ambient = glm::vec3(1.0f, 1.0f, 1.0f);
+        diffuse = glm::vec3(1.0f, 1.0f, 1.0f);
+        specular = glm::vec3(1.0f, 1.0f, 1.0f);
+        k_c = 1.0f;
+        k_l = 0.09f;
+        k_q = 0.032f;
+        inner_circle = glm::cos(glm::radians(12.5f));
+        outer_circle = glm::cos(glm::radians(25.0f));
+        direction = glm::vec3(0, -1, 0);
+        Number = 1;
+    }
+    void setUpspotLight(Shader& lightingShader)
     {
         lightingShader.use();
+        string lightNumber = to_string(Number);
+        lightingShader.setVec3("spotLights[" + lightNumber + "].position", position);
+        lightingShader.setVec3("spotLights[" + lightNumber + "].ambient", ambient * ambientOn);
+        lightingShader.setVec3("spotLights[" + lightNumber + "].diffuse", diffuse * diffuseOn);
+        lightingShader.setVec3("spotLights[" + lightNumber + "].specular", specular * specularOn);
+        lightingShader.setFloat("spotLights[" + lightNumber + "].k_c", k_c);
+        lightingShader.setFloat("spotLights[" + lightNumber + "].k_l", k_l);
+        lightingShader.setFloat("spotLights[" + lightNumber + "].k_q", k_q);
+        lightingShader.setFloat("spotLights[" + lightNumber + "].inner_circle", inner_circle);
+        lightingShader.setFloat("spotLights[" + lightNumber + "].outer_circle", outer_circle);
+        lightingShader.setVec3("spotLights[" + lightNumber + "].direction", direction);
 
-        lightingShader.setVec3("spotLight.position", position);
-        lightingShader.setVec3("spotLight.direction", direction);
-        lightingShader.setVec3("spotLight.ambient", ambientOn * ambient);
-        lightingShader.setVec3("spotLight.diffuse", diffuseOn * diffuse);
-        lightingShader.setVec3("spotLight.specular", specularOn * specular);
-        lightingShader.setFloat("spotLight.k_c", k_c);
-        lightingShader.setFloat("spotLight.k_l", k_l);
-        lightingShader.setFloat("spotLight.k_q", k_q);
-        lightingShader.setFloat("spotLight.cutOff", glm::cos(glm::radians(cutOff)));
-        lightingShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(outerCuttOff)));
     }
     void turnOff()
     {
@@ -68,31 +82,21 @@ public:
     {
         ambientOn = 1.0;
     }
-    void turnAmbientOff()
-    {
-        ambientOn = 0.0;
-    }
     void turnDiffuseOn()
     {
         diffuseOn = 1.0;
     }
-    void turnDiffuseOff()
-    {
-        diffuseOn = 0.0;
-    }
+
     void turnSpecularOn()
     {
         specularOn = 1.0;
     }
-    void turnSpecularOff()
-    {
-        specularOn = 0.0;
-    }
+
+
 private:
     float ambientOn = 1.0;
     float diffuseOn = 1.0;
     float specularOn = 1.0;
 };
-
 
 #endif /* spotLight_h */

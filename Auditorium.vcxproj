@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basic_camera.h" />
+    <ClInclude Include="BezierCurve.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="cube.h" />
     <ClInclude Include="curved_wall.h" />
