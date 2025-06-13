@@ -34,68 +34,68 @@
 </div>
 
 <div style="text-align: center;">
-  <img src="Project_ss/Stage_design.png" alt="Stage Design" width="1000" height="500"><br>
+  <img src="Project_ss/Stage_design.png" alt="Stage Design" width="800" height="500"><br>
   <em>Fig 2: Stage Design</em>
   <br><br><br>
 </div>
 
 <div style="text-align: center;">
-  <img src="Project_ss/seat_arrangements.png" alt="Seat Arrangements" width="1000" height="500"><br>
+  <img src="Project_ss/seat_arrangements.png" alt="Seat Arrangements" width="800" height="500"><br>
   <em>Fig 3: Seat Arrangements</em>
   <br><br><br>
 </div>
 
 <div style="text-align: center;">
-  <img src="Project_ss/parabolic_curved_wall.png" alt="Parabolic Curved Wall" width="1000" height="500"><br>
+  <img src="Project_ss/parabolic_curved_wall.png" alt="Parabolic Curved Wall" width="800" height="500"><br>
   <em>Fig 4: Parabolic Curved Wall</em>
   <br><br><br>
 </div>
 
 <div style="text-align: center;">
-  <img src="Project_ss/curve_ceiling_using_bezier_curve.png" alt="Bezier Curve Ceiling" width="1000" height="500"><br>
+  <img src="Project_ss/curve_ceiling_using_bezier_curve.png" alt="Bezier Curve Ceiling" width="800" height="500"><br>
   <em>Fig 5: Curve Ceiling Using Bezier Curve</em>
   <br><br><br>
 </div>
 
 <div style="text-align: center;">
-  <img src="Project_ss/point_light_effect.png" alt="Point Light Effect" width="1000" height="500"><br>
+  <img src="Project_ss/point_light_effect.png" alt="Point Light Effect" width="800" height="500"><br>
   <em>Fig 6: Point Light Effect</em>
   <br><br><br>
 </div>
 
 <div style="text-align: center;">
-  <img src="Project_ss/Directional_light_effect.png" alt="Directional Light Effect" width="1000" height="500"><br>
+  <img src="Project_ss/Directional_light_effect.png" alt="Directional Light Effect" width="800" height="500"><br>
   <em>Fig 7: Directional Light Effect</em>
   <br><br><br>
 </div>
 
 <div style="text-align: center;">
-  <img src="Project_ss/spot_light_effect.png" alt="Spot Light Effect" width="1000" height="500"><br>
+  <img src="Project_ss/spot_light_effect.png" alt="Spot Light Effect" width="800" height="500"><br>
   <em>Fig 8: Spot Light Effect</em>
   <br><br><br>
 </div>
 
 <div style="text-align: center;">
-  <img src="Project_ss/rotable_sphere_object.png" alt="Rotatable Sphere Object" width="1000" height="500"><br>
+  <img src="Project_ss/rotable_sphere_object.png" alt="Rotatable Sphere Object" width="800" height="500"><br>
   <em>Fig 9: Rotatable Sphere Object</em>
   <br><br><br>
 </div>
 
 <div style="text-align: center;">
-  <img src="Project_ss/car_dynamic_object.png" alt="Car as Dynamic Object" width="1000" height="500"><br>
+  <img src="Project_ss/car_dynamic_object.png" alt="Car as Dynamic Object" width="800" height="500"><br>
   <em>Fig 10: Car as Dynamic Object</em>
   <br><br><br>
 </div>
 
 <div style="text-align: center;">
-  <img src="Project_ss/Fractal_tree.png" alt="Fractal Tree" width="1000" height="500"><br>
+  <img src="Project_ss/Fractal_tree.png" alt="Fractal Tree" width="800" height="500"><br>
   <em>Fig 11: Fractal Tree with Cylindrical Tree Pot</em>
   <br><br><br>
 </div>
 
 <h2>🎬 Video Demonstration</h2>
-📽️ [Click here to watch the video demonstration]
 <div style="text-align: center;">
+  📽️ [Click here to watch the video demonstration]
   <a href="https://youtu.be/oAObcHvF0cI?si=o5YkPCypYWIjOhOJ" target="_blank">
     Project Video Demonstration
   </a>
