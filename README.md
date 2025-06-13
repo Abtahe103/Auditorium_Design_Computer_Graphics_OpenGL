@@ -28,7 +28,7 @@
 <h2>Project Screenshots</h2>
 
 <div style="text-align: center;">
-  <img src="Project_ss/complete_view.png" alt="Complete View" width="1000" height="500"><br>
+  <img src="Project_ss/complete_view.png" alt="Complete View" width="800" height="500"><br>
   <em>Fig 1: Complete View of 3D Auditorium</em>
   <br><br><br>
 </div>
