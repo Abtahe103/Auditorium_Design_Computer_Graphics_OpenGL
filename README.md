@@ -97,6 +97,7 @@
 📽️ [Click here to watch the video demonstration]
 <div style="text-align: center;">
   <a href="https://youtu.be/oAObcHvF0cI?si=o5YkPCypYWIjOhOJ" target="_blank">
+    Project Video Demonstration
   </a>
   <br>
   <br><br><br>
